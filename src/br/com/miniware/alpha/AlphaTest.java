@@ -7,7 +7,7 @@ import org.junit.Test;
 public class AlphaTest {
 
 	@Test
-	public void testAlpha() {
+	public void testQueAEquacaoJaEARespostaFinal() {
 		String res;
 		res = Alpha.resolver("x=2.0");
 		assertEquals("Resposta final", res);
@@ -36,8 +36,16 @@ public class AlphaTest {
 	@Test
 	public void testAlpha5() {
 		String res;
-		res = Alpha.resolver("");
-		assertEquals("", res);
+		res = Alpha.resolver("2x=2+2");
+		assertEquals("2x=4;x=4/2;x=2", res);
 	}
+	
+	@Test
+	public void testAlpha6() {
+		String res;
+		res = Alpha.resolver("3x+2=4");
+		assertEquals("3x+2-2=4-2;3x=4-2;3x=2;3x/3=2/3;x=2/3", res);
+	}
+	
 	
 }
