@@ -1,0 +1,22 @@
+Historias de Usuários
+SENDO um aluno que precisa estudar matemática.
+ POSSO visualizar passo-a-passo as equações.
+ PARA que eu possa acompanhar a solução
+
+Cenário 1: Polinomio do primeiro grau
+Dado que o usuário informe a expressão 3x+2=4.
+Quando o aluno solicitar a resolução passo a passo
+Então O sistema apresenta a equeção 3x=4-2
+E  3x/3=2/3
+E 3.2/3+2=4
+E 2+2=4
+
+Cenário 2: Visualização da expressão.
+Dado que a expressão x=2
+Quando solicitar a resolução passo a passo
+Então O sistema informa que a expressão é a resposta final.
+
+
+String res;
+Res=alpha.resolver(“x=2”)
+assertEquals(“resposta final”);
