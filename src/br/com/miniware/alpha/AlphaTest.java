@@ -32,4 +32,12 @@ public class AlphaTest {
 		res = Alpha.resolver("x=2+5");
 		assertEquals("x=7.0", res);
 	}
+	
+	@Test
+	public void testAlpha5() {
+		String res;
+		res = Alpha.resolver("");
+		assertEquals("", res);
+	}
+	
 }

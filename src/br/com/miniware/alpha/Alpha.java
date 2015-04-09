@@ -20,4 +20,14 @@ public class Alpha {
 		}
 		return null;
 	}
+	
+	public static String resolver2(String string) {
+		String termo[] = string.split("=");
+		String fase1[] = termo[0].split("x");
+		double value;
+		value = Double.parseDouble(fase1[0]);
+		return string;
+	}
+	
+	
 }
