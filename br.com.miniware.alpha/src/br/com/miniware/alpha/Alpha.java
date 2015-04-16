@@ -45,6 +45,19 @@ public class Alpha {
 		
 		return termos[0].equals(termos[1]);
 	}
+
+	
+	public static int getPontuacao(String respostaUsuario,
+			String respostaCorreta) {
+		int pontuacao = 0;
+		
+		if (respostaCorreta.equals(respostaUsuario)) {
+			pontuacao++;
+		}
+		
+		return pontuacao;
+	}
+	
 	
 	
 }
