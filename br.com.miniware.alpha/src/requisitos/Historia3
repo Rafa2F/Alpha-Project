@@ -1,0 +1,9 @@
+Historias de Usuários 3
+ SENDO um aluno que precisa estudar matemática.
+ POSSO verificar minha pontuação baseado nos erros e nos acertos.
+ PARA que eu possa avaliar a evolução do meu aprendizado.
+
+Cenário 1: Verifica Pontuacao Acerto
+	Dado que eu resolvi a equação x=2 com x=2
+	Quando solicitar a minha pontuação
+	Então informa que a pontuacao é igual a 1.

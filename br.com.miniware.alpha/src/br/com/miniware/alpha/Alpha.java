@@ -37,7 +37,13 @@ public class Alpha {
 			return "Resposta correta";
 		}
 		return "Resposta incorreta";
+	}
+	public static boolean confirmarResultado(String expressao, String resultado) {
+		String e = expressao.replaceAll("x", resultado);
 		
+		String[] termos = e.split("=");
+		
+		return termos[0].equals(termos[1]);
 	}
 	
 	

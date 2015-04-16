@@ -1,5 +1,8 @@
 package br.com.miniware.alpha;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 import org.junit.experimental.theories.suppliers.TestedOn;
@@ -49,6 +52,7 @@ public class AlphaTest {
 	}
 	
 	@Test
+<<<<<<< HEAD
 	public void confirmarDesenvolvimentoDaResolucao(){
 		String resultado;
 		resultado = Alpha.confirmar("x=3", "Resposta final");
@@ -67,5 +71,28 @@ public class AlphaTest {
 	
 	
 	
+=======
+	public void testVerificaPontuacaoAcerto () {
+		String respostaUsuario = "x=2";
+		String respostaCorreta = "x=2";
+		//FIXME:assertTrue(getPontuacao() == 1);
+		fail();
+	}
+>>>>>>> 8b3f4df909a046dab877b7dc05370976e144d453
 	
+	@Test
+	public void testConfirmacaoQuandoOValorEstiverCorreto() {
+		String expressao = "x=2";
+		String resultado = "2";
+		
+		assertTrue(Alpha.confirmarResultado(expressao, resultado));
+	}
+	
+	@Test
+	public void testConfirmacaoQuandoOValorEstiverIncorreto() {
+		String expressao = "x=2";
+		String resultado = "3";
+		
+		assertFalse(Alpha.confirmarResultado(expressao, resultado));
+	}
 }
