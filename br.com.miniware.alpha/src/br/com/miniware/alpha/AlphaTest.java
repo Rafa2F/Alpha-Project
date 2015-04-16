@@ -2,6 +2,7 @@ package br.com.miniware.alpha;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -53,8 +54,8 @@ public class AlphaTest {
 	public void testVerificaPontuacaoAcerto () {
 		String respostaUsuario = "x=2";
 		String respostaCorreta = "x=2";
-		//assertTrue(getPontuacao() == 1); Fix me.
-		
+		//FIXME:assertTrue(getPontuacao() == 1);
+		fail();
 	}
 	
 	@Test
