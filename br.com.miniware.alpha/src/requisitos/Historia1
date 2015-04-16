@@ -1,0 +1,40 @@
+Historias de Usuários
+ SENDO um aluno que precisa estudar matemática.
+ POSSO visualizar passo-a-passo a resolução das equações.
+ PARA que eu possa acompanhar a solução
+
+Cenário 1: Que A Equacao Ja E A Resposta Final.
+Dado que a expressão x=2
+Quando solicitar a resolução passo a passo
+Então O sistema informa que a expressão é a resposta final.
+
+Cenário 2: Visualização da expressão.
+Dado que a expressão x=7
+Quando solicitar a resolução passo a passo
+Então O sistema informa que a expressão é a resposta final.
+
+Cenário 3: Visualização da expressão 2.
+Dado que a expressão x=2+2
+Quando solicitar a resolução passo a passo
+Então O sistema informa que a resposta é x=4.
+
+Cenário 4: Visualização da expressão 2.
+Dado que a expressão x=2+5
+Quando solicitar a resolução passo a passo
+Então O sistema informa que a resposta é x=7.
+
+Cenário 5: Visualização da expressão 3.
+Dado que a expressão 2x=2+2
+Quando solicitar a resolução passo a passo
+Então O sistema apresenta a equação 2x=4
+E 2x/2=4/2
+E x=4/2
+E x=2
+
+Cenário 6: Polinomio do primeiro grau
+Dado que o usuário informe a expressão 3x+2=4.  
+Quando o aluno solicitar a resolução passo a passo
+Então O sistema apresenta a equeção 3x+2-2=4-2
+E 3x=4-2
+E 3x/3=2/3
+E x=2/3

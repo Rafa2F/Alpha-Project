@@ -17,6 +17,8 @@ public class Alpha {
 				double v = Double.parseDouble(termos[1]);
 				return "Resposta final";
 			}
+		} else {
+			
 		}
 		return null;
 	}
@@ -27,6 +29,15 @@ public class Alpha {
 		double value;
 		value = Double.parseDouble(fase1[0]);
 		return string;
+	}
+
+	public static String confirmar(String string, String string2) {
+		String r = resolver(string); 
+		if(r.equals(string2) ){
+			return "Resposta correta";
+		}
+		return "Resposta incorreta";
+		
 	}
 	
 	

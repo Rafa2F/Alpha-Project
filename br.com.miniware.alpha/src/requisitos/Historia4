@@ -1,0 +1,12 @@
+Historias de Usuários 4
+ SENDO um aluno que precisa estudar matemática.
+ POSSO verificar o desenvolvimento da resolução.
+ PARA que eu possa verificar se esta correto.
+ 
+  Cenário confirmar desenvolvimento da resoluçao
+	Dado  a expressao x=2 
+	Quando informar a resoluçao x=2 
+	Então informar qua a resoluçao esta correta
+	
+	
+ 
