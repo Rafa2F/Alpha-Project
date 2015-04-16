@@ -49,15 +49,6 @@ Dado que a expressão x=2
 Quando informar o valor 2 
 Então O sistema verifica que 2=2
 
-Historias de Usuários 3
- SENDO um aluno que precisa estudar matemática.
- POSSO verificar minha pontuação baseado nos erros e nos acertos.
- PARA que eu possa avaliar a evolução do meu aprendizado.
-
-Cenário 1: Visualização da expressão.
-	Dado que eu resolvi a equação x=2 com x=2
-	Quando solicitar a minha pontuação
-	Então informa que a pontuacao é igual a 1.
  
 Historias de Usuários 4
  SENDO um aluno que precisa estudar matemática.
@@ -68,5 +59,3 @@ Historias de Usuários 4
 	Dado que a expressão x=2
 	Quando solicitar a resolução passo a passo
 	Então O sistema informa que a expressão é a resposta final.
-
-

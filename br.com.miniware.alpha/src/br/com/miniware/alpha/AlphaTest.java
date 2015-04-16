@@ -47,5 +47,12 @@ public class AlphaTest {
 		assertEquals("3x+2-2=4-2;3x=4-2;3x=2;3x/3=2/3;x=2/3", res);
 	}
 	
+	@Test
+	public void testVerificaPontuacaoAcerto () {
+		String respostaUsuario = "x=2";
+		String respostaCorreta = "x=2";
+		assertTrue(getPontuacao() == 1);
+		
+	}
 	
 }
