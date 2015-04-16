@@ -30,7 +30,11 @@ public class Alpha {
 	}
 
 	public static boolean confirmarResultado(String expressao, String resultado) {
-		return true;
+		String e = expressao.replaceAll("x", resultado);
+		
+		String[] termos = e.split("=");
+		
+		return termos[0].equals(termos[1]);
 	}
 	
 	
