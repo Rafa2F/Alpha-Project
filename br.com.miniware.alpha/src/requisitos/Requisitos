@@ -38,17 +38,6 @@ Então O sistema apresenta a equeção 3x+2-2=4-2
 E 3x=4-2
 E 3x/3=2/3
 E x=2/3
-
-Historias de Usuários 2
- SENDO um aluno que precisa estudar matemática.
- POSSO verificar se um valor satisfaz uma equação.
- PARA que eu possa testar a solução.
- 
- Cenário 1: Visualização da expressão.
-Dado que a expressão x=2
-Quando informar o valor 2 
-Então O sistema verifica que 2=2
-
  
 Historias de Usuários 4
  SENDO um aluno que precisa estudar matemática.

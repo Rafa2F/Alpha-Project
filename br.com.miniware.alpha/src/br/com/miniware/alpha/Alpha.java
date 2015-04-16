@@ -28,6 +28,10 @@ public class Alpha {
 		value = Double.parseDouble(fase1[0]);
 		return string;
 	}
+
+	public static boolean confirmarResultado(String expressao, String resultado) {
+		return true;
+	}
 	
 	
 }

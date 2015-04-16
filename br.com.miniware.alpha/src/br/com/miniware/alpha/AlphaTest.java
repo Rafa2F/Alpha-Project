@@ -1,5 +1,6 @@
 package br.com.miniware.alpha;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -55,4 +56,12 @@ public class AlphaTest {
 		
 	}
 	
+	@Test
+	public void testConfirmacaoQuandoOValorEstiverCorreto() {
+		String expressao = "x=2";
+		String resultado = "2";
+		
+		assertTrue(Alpha.confirmarResultado(expressao, resultado));
+		
+	}
 }
