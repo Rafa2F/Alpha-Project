@@ -54,9 +54,9 @@ public class AlphaTest {
 	public void testVerificaPontuacaoAcerto () {
 		String respostaUsuario = "x=2";
 		String respostaCorreta = "x=2";
-		//FIXME:assertTrue(getPontuacao() == 1);
-		fail();
+		assertTrue(Alpha.getPontuacao(respostaUsuario, respostaCorreta) == 1);
 	}
+	
 	
 	@Test
 	public void testConfirmacaoQuandoOValorEstiverCorreto() {
