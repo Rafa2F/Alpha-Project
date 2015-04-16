@@ -14,7 +14,7 @@ public class AlphaTest {
 	}
 
 	@Test
-	public void testAlpha2() {
+	public void testVisualizacaoDaExpressao() {
 		String res;
 		res = Alpha.resolver("x=7.0");
 		assertEquals("Resposta final", res);
