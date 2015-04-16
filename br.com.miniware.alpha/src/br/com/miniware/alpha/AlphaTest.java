@@ -52,7 +52,6 @@ public class AlphaTest {
 	}
 	
 	@Test
-<<<<<<< HEAD
 	public void confirmarDesenvolvimentoDaResolucao(){
 		String resultado;
 		resultado = Alpha.confirmar("x=3", "Resposta final");
@@ -68,17 +67,11 @@ public class AlphaTest {
 		
 	}
 	
-	
-	
-	
-=======
 	public void testVerificaPontuacaoAcerto () {
 		String respostaUsuario = "x=2";
 		String respostaCorreta = "x=2";
 		assertTrue(Alpha.getPontuacao(respostaUsuario, respostaCorreta) == 1);
-	}
->>>>>>> 8b3f4df909a046dab877b7dc05370976e144d453
-	
+	}	
 	
 	@Test
 	public void testConfirmacaoQuandoOValorEstiverCorreto() {
