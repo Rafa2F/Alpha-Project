@@ -3,6 +3,8 @@ package br.com.miniware.alpha;
 import java.util.Arrays;
 
 public class Alpha {
+	
+	static private Pontuacao pontuacao = new Pontuacao ();
 
 	public static String resolver(String string) {
 		String resultado = "";
@@ -95,18 +97,19 @@ public class Alpha {
 		}
 		return resultado;
 	}
-
-	public static String resolver2(String string) {
-		String termo[] = string.split("=");
-		String fase1[] = termo[0].split("x");
-		double value;
-		value = Double.parseDouble(fase1[0]);
-		return string;
-	}
+	
+//	public static String resolver2(String string) {
+//		String termo[] = string.split("=");
+//		String fase1[] = termo[0].split("x");
+//		double value;
+//		value = Double.parseDouble(fase1[0]);
+//		return string;
+//	}
 
 	public static String confirmar(String string, String string2) {
-		String r = resolver(string);
-		if (r.equals(string2)) {
+		String r = resolver(string); 
+		if(r.equals(string2) ){
+			pontuacao.adicionaPontuacao(1);
 			return "Resposta correta";
 		}
 		return "Resposta incorreta";
@@ -129,6 +132,17 @@ public class Alpha {
 		}
 
 		return pontuacao;
+		}
+	
+	public static int getPontuacao() {
+		
+		return pontuacao.getPontuacao();
+	}
+	
+	public static void resetPontuacao () {
+		
+		pontuacao.resetPontuacao();
+		
 	}
 
 }
