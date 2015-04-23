@@ -88,4 +88,15 @@ public class AlphaTest {
 		
 		assertFalse(Alpha.confirmarResultado(expressao, resultado));
 	}
+	
+	@Test
+	public void testVerificaPontuacaoErro () {
+		Alpha.setPontuacao(1);
+		String respostaUsuario = "x=3";
+		String respostaCorreta = "x=2";
+		assertTrue(Alpha.getPontuacao(respostaUsuario, respostaCorreta) == 0);
+	}	
+		
+		
+	
 }
