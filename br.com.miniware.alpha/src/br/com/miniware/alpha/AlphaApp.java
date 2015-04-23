@@ -6,10 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
 
 public class AlphaApp {
 
 	private JFrame frame;
+	private final Action actionSair = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -50,6 +54,7 @@ public class AlphaApp {
 		menuBar.add(mnArquivo);
 		
 		JMenuItem mntmSair = new JMenuItem("Sair");
+		mntmSair.setAction(actionSair);
 		mnArquivo.add(mntmSair);
 		
 		JMenu mnAjuda = new JMenu("Ajuda");
@@ -57,5 +62,19 @@ public class AlphaApp {
 		
 		JMenuItem mntmSobre = new JMenuItem("Sobre");
 		mnAjuda.add(mntmSobre);
+	}
+	private class SwingAction extends AbstractAction {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -5234497447388627760L;
+		public SwingAction() {
+			putValue(NAME, "Sair");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			frame.setVisible(false);
+			frame.dispose();
+		}
 	}
 }
