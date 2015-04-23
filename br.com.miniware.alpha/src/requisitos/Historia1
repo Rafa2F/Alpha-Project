@@ -23,7 +23,7 @@ Dado que a expressão x=2+5
 Quando solicitar a resolução passo a passo
 Então O sistema informa que a resposta é x=7.
 
-Cenário 5: Visualização da expressão 3.
+Cenário 5:Que A Equacao Possui Multiplicador No X.
 Dado que a expressão 2x=2+2
 Quando solicitar a resolução passo a passo
 Então O sistema apresenta a equação 2x=4
