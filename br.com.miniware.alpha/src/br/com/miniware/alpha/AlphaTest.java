@@ -2,10 +2,8 @@ package br.com.miniware.alpha;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 
 public class AlphaTest {
@@ -67,10 +65,10 @@ public class AlphaTest {
 		
 	}
 	
-	public void testVerificaPontuacaoAcerto () {
-		String respostaUsuario = "x=2";
-		String respostaCorreta = "x=2";
-		assertTrue(Alpha.getPontuacao(respostaUsuario, respostaCorreta) == 1);
+	@Test
+	public void testVerificaPontuacaoInicial () {
+		Alpha.resetPontuacao();
+		assertEquals(0, Alpha.getPontuacao());
 	}	
 	
 	@Test
@@ -90,11 +88,11 @@ public class AlphaTest {
 	}
 	
 	@Test
-	public void testVerificaPontuacaoErro () {
-		Alpha.setPontuacao(1);
-		String respostaUsuario = "x=3";
-		String respostaCorreta = "x=2";
-		assertTrue(Alpha.getPontuacao(respostaUsuario, respostaCorreta) == 0);
+	public void testVerificaPontuacaoAcerto () {
+		Alpha.resetPontuacao();
+		Alpha.confirmar("x=3", "Resposta final");
+	
+		assertEquals(1, Alpha.getPontuacao());
 	}	
 		
 		

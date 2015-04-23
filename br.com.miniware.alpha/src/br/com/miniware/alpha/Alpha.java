@@ -1,6 +1,8 @@
 package br.com.miniware.alpha;
 
 public class Alpha {
+	
+	static private Pontuacao pontuacao = new Pontuacao ();
 
 	public static String resolver(String string) {
 		String[] termos = string.split("=");
@@ -23,17 +25,18 @@ public class Alpha {
 		return null;
 	}
 	
-	public static String resolver2(String string) {
-		String termo[] = string.split("=");
-		String fase1[] = termo[0].split("x");
-		double value;
-		value = Double.parseDouble(fase1[0]);
-		return string;
-	}
+//	public static String resolver2(String string) {
+//		String termo[] = string.split("=");
+//		String fase1[] = termo[0].split("x");
+//		double value;
+//		value = Double.parseDouble(fase1[0]);
+//		return string;
+//	}
 
 	public static String confirmar(String string, String string2) {
 		String r = resolver(string); 
 		if(r.equals(string2) ){
+			pontuacao.adicionaPontuacao(1);
 			return "Resposta correta";
 		}
 		return "Resposta incorreta";
@@ -47,15 +50,15 @@ public class Alpha {
 	}
 
 	
-	public static int getPontuacao(String respostaUsuario,
-			String respostaCorreta) {
-		int pontuacao = 0;
+	public static int getPontuacao() {
 		
-		if (respostaCorreta.equals(respostaUsuario)) {
-			pontuacao++;
-		}
+		return pontuacao.getPontuacao();
+	}
+	
+	public static void resetPontuacao () {
 		
-		return pontuacao;
+		pontuacao.resetPontuacao();
+		
 	}
 	
 	
