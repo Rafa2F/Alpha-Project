@@ -60,7 +60,7 @@ public class Alpha {
 				String resultadoSomaDivisao = "";
 				resultadoSomaDivisao = termos[0] + "=" + termos[1] + ";";
 //				System.out.println(resultadoSomaDivisao);
-//				System.out.println(Arrays.toString(termos)+ ";Rafael aqui Re");
+
 				resultado += resultadoSomaDivisao;
 
 			}
