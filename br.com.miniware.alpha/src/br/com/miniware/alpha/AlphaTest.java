@@ -41,14 +41,19 @@ public class AlphaTest {
 		res = Alpha.resolver("2x=2+2");
 					//"2x/2.0=4.0/2.02x/2.0=2.0;x=2.0;"
 					//2x=4.0;2x/2=4.0/2;x=4.0/2;x=2.0
+		
 		assertEquals("2x=4.0;2x/2.0=4.0/2.0;2x/2.0=2.0;x=2.0", res);
 	}
 	
 	@Test
-	public void testAlpha6() {
+	public void testPolinomioDoPrimeiroGrau() {
 		String res = null;
-		res = Alpha.resolver("3x+2=4");
-		assertEquals("3x+2-2=4-2;3x=4-2;3x/3=2/3;x=2/3", res);
+		res = Alpha.resolver("3.0x+2.0=4.0");
+		
+		assertEquals("3.0x+2.0-2.0=4.0-2.0;"
+					+ "3.0x=2.0;"
+					+ "3.0x/3.0=2.0/3.0;"
+					+ "x=2.0/3.0", res);
 	}
 	
 	@Test

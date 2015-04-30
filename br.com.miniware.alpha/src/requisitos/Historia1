@@ -31,7 +31,7 @@ E 2x/2=4/2
 E x=4/2
 E x=2
 
-Cenário 6: Polinomio do primeiro grau
+Cenário 6: Polinomio Do Primeiro Grau
 Dado que o usuário informe a expressão 3x+2=4.  
 Quando o aluno solicitar a resolução passo a passo
 Então O sistema apresenta a equeção 3x+2-2=4-2

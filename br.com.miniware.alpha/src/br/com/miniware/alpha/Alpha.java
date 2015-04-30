@@ -48,7 +48,48 @@ public class Alpha {
 				resultado += resultadoSoma;
 				
 			}
-			System.out.println(Arrays.toString(termos)+ "Rafael Passou aqui");
+			
+			// Verifica se as duas partes podem ser subtraídas por um numero comum.
+			if (termos[0].contains("+")) {
+				String termoZero[] = termos[0].split("\\+");
+				
+				double valor = Double.parseDouble(termoZero[1]);
+
+				termos[0] += "-" + valor;
+				termos[1] += "-" + valor;
+				
+				resultado = termos[0] + "=" + termos[1] + ";";
+			}
+			
+			// Realiza subtração.
+			if (termos[0].contains("-")) {
+				String[] parcelasUm = termos[0].split("\\-");
+				String[] parcelasDois = parcelasUm[0].split("\\+");
+				
+				double s = Double.parseDouble(parcelasUm[1]);
+				
+				s -= Double.parseDouble(parcelasDois[1]);
+				
+				if (s == 0.0) {
+					termos[0] = parcelasDois[0];
+				}
+				
+				// Realiza subtração.
+				if (termos[1].contains("-")) {
+					String[] parcelas = termos[1].split("\\-");
+					
+					s = Double.parseDouble(parcelas[0]);
+					
+					s -= Double.parseDouble(parcelas[1]);
+					
+					// Colocando o resultado na segunda parte da equação.
+					termos[1] = String.valueOf(s);
+					
+				}
+				
+				resultado += termos[0] + "=" + termos[1]+ ";";
+			}
+			
 			// Verifica se as duas partes da equação são divisíveis por dois.
 			if (termos[0].contains("x")) {
 				String termoZero = termos[0].replaceAll("x", "");
@@ -62,26 +103,41 @@ public class Alpha {
 //				System.out.println(resultadoSomaDivisao);
 //				System.out.println(Arrays.toString(termos)+ ";Rafael aqui Re");
 				resultado += resultadoSomaDivisao;
-
 			}
 
 			if (termos[1].contains("/")) {
-				// Realizar a soma.
 				String[] parcelas = termos[1].split("/");
 				double s = 0;
 				
-				s = Double.parseDouble(parcelas[0]) / Double.parseDouble(parcelas[1]);
+				if (Double.parseDouble(parcelas[0]) %Double.parseDouble(parcelas[1]) == 0) {
+					s = Double.parseDouble(parcelas[0]) / Double.parseDouble(parcelas[1]);
+					
+					// Colocando o resultado na segunda parte da equação.
+					termos[1] = String.valueOf(s);
+					resultado += termos[0] + "=" + s + ";";
+				}
 				
-				// Colocando o resultado na segunda parte da equação.
-				termos[1] = String.valueOf(s);
-				resultado += termos[0] + "=" + s + ";";
-//				System.out.println(Arrays.toString(termos));
-				
+				if (termos[0].contains("/") && termos[0].contains("x")) {
+					parcelas = termos[0].split("/");
+					s = 0;
+					
+					String termoZero = parcelas[0].replaceAll("x", "");
+					
+					s = Double.parseDouble(termoZero) / Double.parseDouble(parcelas[1]);
+					
+					// Testando se o resultado é neutro, igual a 1.
+					if (s == 1.0) {
+						termos[0] = "x";
+					} else {
+						termos[0] = String.valueOf(s);
+					}
+					
+					// Colocando o resultado na segunda parte da equação.
+					resultado += termos[0] + "=" + termos[1];
+				}
 			} 
 			
-			// IMPLEMENTAÇÃO
 			if (termos[0].contains("/") && termos[0].contains("x")) {
-				// Realizar a soma.				
 				String[] parcelas = termos[0].split("/");
 				double s = 0;
 				
@@ -98,10 +154,7 @@ public class Alpha {
 				
 				// Colocando o resultado na segunda parte da equação.
 				resultado += termos[0] + "=" + termos[1];
-			}
-			
-//			System.out.println(resultado);
-			
+			}			
 		}
 		return resultado;
 	}
