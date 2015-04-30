@@ -9,10 +9,11 @@ import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
+import java.awt.Toolkit;
 
 public class AlphaApp {
 
-	private JFrame frame;
+	private JFrame frmAlpha;
 	private final Action actionSair = new SwingAction();
 
 	/**
@@ -23,7 +24,7 @@ public class AlphaApp {
 			public void run() {
 				try {
 					AlphaApp window = new AlphaApp();
-					window.frame.setVisible(true);
+					window.frmAlpha.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,13 +43,15 @@ public class AlphaApp {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmAlpha = new JFrame();
+		frmAlpha.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\631320019\\Desktop\\alpha.jpg"));
+		frmAlpha.setTitle("Alpha");
+		frmAlpha.setBounds(100, 100, 450, 300);
+		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmAlpha.getContentPane().setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
+		frmAlpha.setJMenuBar(menuBar);
 		
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
@@ -73,8 +76,8 @@ public class AlphaApp {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			frame.dispose();
+			frmAlpha.setVisible(false);
+			frmAlpha.dispose();
 		}
 	}
 }

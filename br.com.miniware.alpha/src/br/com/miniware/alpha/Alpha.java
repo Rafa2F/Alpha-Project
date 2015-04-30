@@ -89,7 +89,6 @@ public class Alpha {
 				
 				resultado += termos[0] + "=" + termos[1]+ ";";
 			}
-			
 			// Verifica se as duas partes da equação são divisíveis por dois.
 			if (termos[0].contains("x")) {
 				String termoZero = termos[0].replaceAll("x", "");
@@ -101,7 +100,7 @@ public class Alpha {
 				String resultadoSomaDivisao = "";
 				resultadoSomaDivisao = termos[0] + "=" + termos[1] + ";";
 //				System.out.println(resultadoSomaDivisao);
-//				System.out.println(Arrays.toString(termos)+ ";Rafael aqui Re");
+
 				resultado += resultadoSomaDivisao;
 			}
 
