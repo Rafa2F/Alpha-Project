@@ -42,9 +42,13 @@ public class Alpha {
 				}
 				// Colocando o resultado na segunda parte da equação.
 				termos[1] = String.valueOf(s);
-				resultado += termos[0] + "=" + s + ";";
+				String resultadoSoma = "";
+				resultadoSoma += termos[0] + "=" + s + ";";
+//				System.out.println(resultadoSoma);
+				resultado += resultadoSoma;
+				
 			}
-			System.out.println(Arrays.toString(termos));
+			System.out.println(Arrays.toString(termos)+ "Rafael Passou aqui");
 			// Verifica se as duas partes da equação são divisíveis por dois.
 			if (termos[0].contains("x")) {
 				String termoZero = termos[0].replaceAll("x", "");
@@ -53,8 +57,12 @@ public class Alpha {
 
 				termos[0] += "/" + valor;
 				termos[1] += "/" + valor;
-				resultado = termos[0] + "=" + termos[1];
-				System.out.println(Arrays.toString(termos));
+				String resultadoSomaDivisao = "";
+				resultadoSomaDivisao = termos[0] + "=" + termos[1] + ";";
+//				System.out.println(resultadoSomaDivisao);
+//				System.out.println(Arrays.toString(termos)+ ";Rafael aqui Re");
+				resultado += resultadoSomaDivisao;
+
 			}
 
 			if (termos[1].contains("/")) {
@@ -67,7 +75,7 @@ public class Alpha {
 				// Colocando o resultado na segunda parte da equação.
 				termos[1] = String.valueOf(s);
 				resultado += termos[0] + "=" + s + ";";
-				System.out.println(Arrays.toString(termos));
+//				System.out.println(Arrays.toString(termos));
 				
 			} 
 			
@@ -89,10 +97,10 @@ public class Alpha {
 				}
 				
 				// Colocando o resultado na segunda parte da equação.
-				resultado += termos[0] + "=" + termos[1] + ";";
+				resultado += termos[0] + "=" + termos[1];
 			}
 			
-			System.out.println(resultado);
+//			System.out.println(resultado);
 			
 		}
 		return resultado;
