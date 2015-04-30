@@ -48,7 +48,7 @@ public class Alpha {
 				resultado += resultadoSoma;
 				
 			}
-			System.out.println(Arrays.toString(termos)+ "Rafael Passou aqui");
+//			System.out.println(Arrays.toString(termos)+ "Rafael Passou aqui");
 			// Verifica se as duas partes da equação são divisíveis por dois.
 			if (termos[0].contains("x")) {
 				String termoZero = termos[0].replaceAll("x", "");
