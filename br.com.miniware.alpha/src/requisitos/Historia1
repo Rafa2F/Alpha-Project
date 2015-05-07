@@ -1,29 +1,29 @@
 Historias de Usuários
- SENDO um aluno que precisa estudar matemática.
- POSSO visualizar passo-a-passo a resolução das equações.
- PARA que eu possa acompanhar a solução
+ Sendo um aluno que precisa estudar matemática.
+ posso visualizar passo-a-passo a resolução das equações.
+ para que eu possa acompanhar a solução
 
-Cenário 1: Que A Equacao Ja E A Resposta Final.
+Cenário: Resolver Quando A Equacao Ja E A Resposta Final E Dois.
 Dado que a expressão x=2
 Quando solicitar a resolução passo a passo
 Então O sistema informa que a expressão é a resposta final.
 
-Cenário 2: Visualização da expressão.
+Cenário: Resolver Quando A Equacao Ja E A Resposta Final E Sete.
 Dado que a expressão x=7
 Quando solicitar a resolução passo a passo
 Então O sistema informa que a expressão é a resposta final.
 
-Cenário 3: Visualização da expressão 2.
+Cenário: Resolver Quando A Equacao Possui Soma No Segundo Termo Com Valores Iguais.
 Dado que a expressão x=2+2
 Quando solicitar a resolução passo a passo
 Então O sistema informa que a resposta é x=4.
 
-Cenário 4: Visualização da expressão 2.
+Cenário: Resolver Quando A Equacao Possui Soma No Segundo Termo Com Valores Diferentes.
 Dado que a expressão x=2+5
 Quando solicitar a resolução passo a passo
 Então O sistema informa que a resposta é x=7.
 
-Cenário 5:Que A Equacao Possui Multiplicador No X.
+Cenário: Resolver Quando A Equacao Possui Multiplicacao No Primeiro Termo.
 Dado que a expressão 2x=2+2
 Quando solicitar a resolução passo a passo
 Então O sistema apresenta a equação 2x=4
@@ -31,7 +31,7 @@ E 2x/2=4/2
 E x=4/2
 E x=2
 
-Cenário 6: Polinomio do primeiro grau
+Cenário: Resolver Quando A Equacao Possui Multiplicacao E Soma No Primeiro Termo.
 Dado que o usuário informe a expressão 3x+2=4.  
 Quando o aluno solicitar a resolução passo a passo
 Então O sistema apresenta a equeção 3x+2-2=4-2

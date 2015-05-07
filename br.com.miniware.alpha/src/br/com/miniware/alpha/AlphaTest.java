@@ -9,50 +9,56 @@ import org.junit.Test;
 public class AlphaTest {
 
 	@Test
-	public void testQueAEquacaoJaEARespostaFinal() {
+	public void testResolverQuandoAEquacaoJaEARespostaFinalEDois() {
 		String res;
 		res = Alpha.resolver("x=2.0");
 		assertEquals("Resposta final", res);
 	}
 
 	@Test
-	public void testVisualizacaoDaExpressao() {
+	public void testResolverQuandoAEquacaoJaEARespostaFinalESete() {
 		String res;
 		res = Alpha.resolver("x=7.0");
 		assertEquals("Resposta final", res);
 	}
 
 	@Test
-	public void testAlpha3() {
+	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresIguais() {
 		String res;
 		res = Alpha.resolver("x=2+2");
 		assertEquals("x=4.0", res);
 	}
+	
 	@Test
-	public void testAlpha4() {
+	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresDiferentes() {
 		String res;
 		res = Alpha.resolver("x=2+5");
 		assertEquals("x=7.0", res);
 	}
 	
 	@Test
-	public void testQueAEquacaoPossuiMultiplicadorNoX() {
+	public void testResolverQuandoAEquacaoPossuiMultiplicacaoNoPrimeiroTermo() {
 		String res;
 		res = Alpha.resolver("2x=2+2");
 					//"2x/2.0=4.0/2.02x/2.0=2.0;x=2.0;"
 					//2x=4.0;2x/2=4.0/2;x=4.0/2;x=2.0
+		
 		assertEquals("2x=4.0;2x/2.0=4.0/2.0;2x/2.0=2.0;x=2.0", res);
 	}
 	
 	@Test
-	public void testAlpha6() {
+	public void testResolverQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermo() {
 		String res = null;
-		res = Alpha.resolver("3x+2=4");
-		assertEquals("3x+2-2=4-2;3x=4-2;3x/3=2/3;x=2/3", res);
+		res = Alpha.resolver("3.0x+2.0=4.0");
+		
+		assertEquals("3.0x+2.0-2.0=4.0-2.0;"
+					+ "3.0x=2.0;"
+					+ "3.0x/3.0=2.0/3.0;"
+					+ "x=2.0/3.0", res);
 	}
 	
 	@Test
-	public void confirmarDesenvolvimentoDaResolucao(){
+	public void testConfirmarDesenvolvimentoDaResoluçaoQuandoAEquacaoJaEAResolucao(){
 		String resultado;
 		resultado = Alpha.confirmar("x=3", "Resposta final");
 		assertEquals("Resposta correta",resultado);
@@ -74,7 +80,7 @@ public class AlphaTest {
 	}	
 	
 	@Test
-	public void testConfirmacaoQuandoOValorEstiverCorreto() {
+	public void testConfirmarResultadoQuandoOValorEstiverCorreto() {
 		String expressao = "x=2";
 		String resultado = "2";
 		
@@ -82,7 +88,7 @@ public class AlphaTest {
 	}
 	
 	@Test
-	public void testConfirmacaoQuandoOValorEstiverIncorreto() {
+	public void testConfirmarResultadoQuandoOValorEstiverIncorreto() {
 		String expressao = "x=2";
 		String resultado = "3";
 		
@@ -90,7 +96,7 @@ public class AlphaTest {
 	}
 	
 	@Test
-	public void testVerificaPontuacaoAcerto () {
+	public void testVerificarPontuacaoQuandoAcertar() {
 		Alpha.resetPontuacao();
 		Alpha.confirmar("x=3", "Resposta final");
 	

@@ -1,14 +1,14 @@
 Historias de Usuários 2
- SENDO um aluno que precisa estudar matemática.
- POSSO verificar se um valor satisfaz uma equação.
- PARA que eu possa testar a solução.
+ Sendo um aluno que precisa estudar matemática.
+ posso verificar se um valor satisfaz uma equação.
+ para que eu possa testar a solução.
  
-Cenário 1: Confirmacao Quando o Valor Estiver Correto
+Cenário: Confirmar Resultado Quando O Valor Estiver Correto.
 Dado que a expressão x=2
 Quando informar o valor 2 
 Então O sistema verifica que 2=2
 
-Cenário 2: Confirmar Quando o Valor Estiver Incorreto
+Cenário: Confirmar Resultado Quando O Valor Estiver Incorreto
 Dado que a expressão x=3
 Quando informar o valor 2 
 Então O sistema verifica que 3 e diferente de 2
