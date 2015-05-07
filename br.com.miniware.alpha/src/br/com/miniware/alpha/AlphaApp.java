@@ -68,14 +68,10 @@ public class AlphaApp extends JFrame{
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
-			frame.setVisible(false);
-			frame.dispose();
-		} 
-=======
+			
 			frmAlpha.setVisible(false);
-			frmAlpha.dispose();
 		}
->>>>>>> 15f58d03c78bfd2a4ff4208ba7c5fccafed50644
 	}
-}
+	
+}	
+
