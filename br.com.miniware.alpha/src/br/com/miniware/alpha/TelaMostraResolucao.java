@@ -5,13 +5,17 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.JMenuItem;
 
 public class TelaMostraResolucao {
 
@@ -56,8 +60,26 @@ public class TelaMostraResolucao {
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
 		
+		JMenuItem mntmSair = new JMenuItem("Sair");
+		mntmSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frmEquaoPassoA.setVisible(false);
+				frmEquaoPassoA.dispose();
+			}
+		});
+		mnArquivo.add(mntmSair);
+		
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
+		
+		JMenuItem mntmSobre = new JMenuItem("Sobre");
+		mntmSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaSobre sobre = new TelaSobre ();
+				sobre.setVisible(true);
+			}
+		});
+		mnAjuda.add(mntmSobre);
 		frmEquaoPassoA.getContentPane().setLayout(null);
 		
 		textFieldEquacao = new JTextField();
@@ -73,7 +95,28 @@ public class TelaMostraResolucao {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Alpha alpha = new Alpha ();
-				txtpnResolucao.setText(alpha.resolver(textFieldEquacao.getText()));
+				
+				String resultado = alpha.resolver(textFieldEquacao.getText());
+				String[] resultadoOrg = resultado.split(";");
+				int i = 0;
+				if (resultadoOrg[i].isEmpty()) {
+					
+				} else {
+					while (resultadoOrg[i] != null) {
+						System.out.println(resultadoOrg[i]);
+						i++;
+				}
+				
+					
+					}
+					
+				
+				
+					
+					
+				
+				
+				
 			}
 		});
 		
