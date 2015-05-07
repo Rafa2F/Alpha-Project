@@ -10,14 +10,12 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 
-public class AlphaApp {
+public class AlphaApp extends JFrame{
 
 	private JFrame frame;
 	private final Action actionSair = new SwingAction();
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -31,16 +29,12 @@ public class AlphaApp {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	
 	public AlphaApp() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -63,10 +57,8 @@ public class AlphaApp {
 		JMenuItem mntmSobre = new JMenuItem("Sobre");
 		mnAjuda.add(mntmSobre);
 	}
-	private class SwingAction extends AbstractAction {
-		/**
-		 * 
-		 */
+	public class SwingAction extends AbstractAction {
+		
 		private static final long serialVersionUID = -5234497447388627760L;
 		public SwingAction() {
 			putValue(NAME, "Sair");
@@ -75,6 +67,6 @@ public class AlphaApp {
 		public void actionPerformed(ActionEvent e) {
 			frame.setVisible(false);
 			frame.dispose();
-		}
+		} 
 	}
 }
