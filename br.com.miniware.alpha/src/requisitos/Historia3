@@ -3,12 +3,12 @@ Historias de Usuários 3
  POSSO verificar minha pontuação baseado nos erros e nos acertos.
  PARA que eu possa avaliar a evolução do meu aprendizado.
 
-Cenário 1: Verifica Pontuacao Acerto
+Cenário: Verificar Pontuacao Quando Acertar
 	Dado que eu resolvi a equação x=2 com x=2
 	Quando solicitar a minha pontuação
 	Então informa que a pontuacao é igual a 1.
 	
-Cenário 2: Verifica Pontuacao Erro
+Cenário: Verificar Pontuacao Quando Errar
 	Dado que eu resolvi a equação x=2 com x=3
 	Quando solicitar a minha pontuação
 	Então reduz um ponto do total.
