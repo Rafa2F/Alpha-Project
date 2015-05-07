@@ -16,11 +16,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
 
 public class TelaMostraResolucao {
 
 	private JFrame frmEquaoPassoA;
 	private JTextField textFieldEquacao;
+	private JTextPane txtpnResolucao;
 
 	/**
 	 * Launch the application.
@@ -77,6 +79,7 @@ public class TelaMostraResolucao {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaSobre sobre = new TelaSobre ();
 				sobre.setVisible(true);
+				sobre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			}
 		});
 		mnAjuda.add(mntmSobre);
@@ -87,33 +90,21 @@ public class TelaMostraResolucao {
 		frmEquaoPassoA.getContentPane().add(textFieldEquacao);
 		textFieldEquacao.setColumns(10);
 		
-		final JTextPane txtpnResolucao = new JTextPane();
-		txtpnResolucao.setBounds(63, 63, 322, 167);
-		frmEquaoPassoA.getContentPane().add(txtpnResolucao);
-		
 		JButton btnNewButton = new JButton("Mostrar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				txtpnResolucao.setText("");
 				Alpha alpha = new Alpha ();
 				
 				String resultado = alpha.resolver(textFieldEquacao.getText());
 				String[] resultadoOrg = resultado.split(";");
-				int i = 0;
-				if (resultadoOrg[i].isEmpty()) {
-					
-				} else {
-					while (resultadoOrg[i] != null) {
-						System.out.println(resultadoOrg[i]);
-						i++;
+				for (int i = 0; i < resultadoOrg.length; i++) 
+				{
+					txtpnResolucao.setText(txtpnResolucao.getText() + resultadoOrg[i] + "\n");
 				}
 				
-					
-					}
-					
 				
 				
-					
-					
 				
 				
 				
@@ -121,11 +112,11 @@ public class TelaMostraResolucao {
 		});
 		
 		
-		btnNewButton.setBounds(296, 34, 89, 23);
+		btnNewButton.setBounds(296, 34, 97, 23);
 		frmEquaoPassoA.getContentPane().add(btnNewButton);
 		
-		JLabel lblE = new JLabel("Equa\u00E7\u00E3o");
-		lblE.setBounds(63, 38, 46, 14);
+		JLabel lblE = new JLabel("Equa\u00E7\u00E3o:");
+		lblE.setBounds(34, 38, 62, 14);
 		frmEquaoPassoA.getContentPane().add(lblE);
 		
 		
@@ -134,5 +125,13 @@ public class TelaMostraResolucao {
 		lblPassoAPasso.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblPassoAPasso.setBounds(107, 0, 180, 23);
 		frmEquaoPassoA.getContentPane().add(lblPassoAPasso);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(55, 66, 338, 151);
+		frmEquaoPassoA.getContentPane().add(scrollPane);
+		
+		txtpnResolucao = new JTextPane();
+		txtpnResolucao.setEditable(false);
+		scrollPane.setViewportView(txtpnResolucao);
 	}
 }
