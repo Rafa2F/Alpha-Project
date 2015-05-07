@@ -1,7 +1,7 @@
-Historias de Usuários 4
- SENDO um aluno que precisa estudar matemática.
- POSSO verificar o aprendizado do desenvolvimento da resolução.
- PARA que eu possa verificar se esta correto.
+ Historias de Usuários 4
+ Sendo um aluno que precisa estudar matemática
+ posso verificar o aprendizado do desenvolvimento da resolução
+ para que eu possa verificar se esta correto.
  
 Cenário: Confirmar Desenvolvimento Da Resoluçao Quando A Equacao Ja E A Resolucao
 	Dado  a expressao x=2 

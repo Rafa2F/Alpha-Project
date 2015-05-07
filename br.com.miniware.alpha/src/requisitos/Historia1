@@ -1,7 +1,7 @@
 Historias de Usuários
- SENDO um aluno que precisa estudar matemática.
- POSSO visualizar passo-a-passo a resolução das equações.
- PARA que eu possa acompanhar a solução
+ Sendo um aluno que precisa estudar matemática.
+ posso visualizar passo-a-passo a resolução das equações.
+ para que eu possa acompanhar a solução
 
 Cenário: Resolver Quando A Equacao Ja E A Resposta Final E Dois.
 Dado que a expressão x=2

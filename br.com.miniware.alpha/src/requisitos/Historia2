@@ -1,7 +1,7 @@
 Historias de Usuários 2
- SENDO um aluno que precisa estudar matemática.
- POSSO verificar se um valor satisfaz uma equação.
- PARA que eu possa testar a solução.
+ Sendo um aluno que precisa estudar matemática.
+ posso verificar se um valor satisfaz uma equação.
+ para que eu possa testar a solução.
  
 Cenário: Confirmar Resultado Quando O Valor Estiver Correto.
 Dado que a expressão x=2
