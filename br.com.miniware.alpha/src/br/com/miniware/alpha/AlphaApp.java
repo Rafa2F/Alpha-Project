@@ -10,6 +10,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
 
 public class AlphaApp extends JFrame{
 
@@ -50,6 +51,14 @@ public class AlphaApp extends JFrame{
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
 		
+		JMenuItem mntmPassoAPasso = new JMenuItem("Passo a Passo");
+		mntmPassoAPasso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaMostraResolucao.main(null);
+			}
+		});
+		mnArquivo.add(mntmPassoAPasso);
+		
 		JMenuItem mntmSair = new JMenuItem("Sair");
 		mntmSair.setAction(actionSair);
 		mnArquivo.add(mntmSair);
@@ -72,6 +81,5 @@ public class AlphaApp extends JFrame{
 			frmAlpha.setVisible(false);
 		}
 	}
-	
 }	
 

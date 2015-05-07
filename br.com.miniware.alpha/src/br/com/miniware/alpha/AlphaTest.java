@@ -102,6 +102,14 @@ public class AlphaTest {
 	
 		assertEquals(1, Alpha.getPontuacao());
 	}	
+	
+	@Test
+	public void testVerificarPontuacaoQuandoErrar() {
+		Alpha.resetPontuacao();
+		Alpha.confirmar("x=3", "x=2");
+	
+		assertEquals(0, Alpha.getPontuacao());
+	}	
 		
 		
 	

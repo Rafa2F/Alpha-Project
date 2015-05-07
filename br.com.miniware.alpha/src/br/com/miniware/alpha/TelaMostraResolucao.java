@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+import java.awt.Toolkit;
 
 public class TelaMostraResolucao {
 
@@ -52,6 +53,7 @@ public class TelaMostraResolucao {
 	 */
 	private void initialize() {
 		frmEquaoPassoA = new JFrame();
+		frmEquaoPassoA.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaMostraResolucao.class.getResource("/br/com/miniware/alpha/alpha.jpg")));
 		frmEquaoPassoA.setTitle("Alpha - Equa\u00E7\u00E3o Passo a Passo");
 		frmEquaoPassoA.setBounds(100, 100, 450, 300);
 		frmEquaoPassoA.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

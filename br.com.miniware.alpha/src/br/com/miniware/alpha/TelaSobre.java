@@ -10,8 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-
 import br.com.miniware.alpha.AlphaApp.SwingAction;
 
 import java.awt.Component;
@@ -99,7 +97,7 @@ public class TelaSobre extends JFrame {
 		btnOk.setBackground(Color.WHITE);
 		btnOk.setBounds(157, 213, 89, 23);
 		A.add(btnOk);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{A, lblAlpha}));
+		
 		
 	
 		
