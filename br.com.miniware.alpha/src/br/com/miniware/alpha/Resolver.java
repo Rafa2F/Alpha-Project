@@ -17,9 +17,9 @@ public class Resolver {
 			if (termos[1].contains("+")) {
 				// Realiza a soma.
 				String soma = soma(termos[1]);
-				
+
 				resultado = termos[0] + "=" + soma;
-				
+
 				return resultado;
 			} else {
 				// Retorna o valor da segunda parte da equação.
@@ -34,13 +34,14 @@ public class Resolver {
 			if (termos[1].contains("+")) {
 				// Realizar a soma.
 				String soma = soma(termos[1]);
-				
+
 				// Colocando o resultado na segunda parte da equação.
 				termos[1] = soma;
 				resultado += termos[0] + "=" + soma + ";";
 			}
 
-			// Verifica se as duas partes podem ser subtraídas por um numero comum.
+			// Verifica se as duas partes podem ser subtraídas por um numero
+			// comum.
 			if (termos[0].contains("+")) {
 				String termoZero[] = termos[0].split("\\+");
 
@@ -56,11 +57,12 @@ public class Resolver {
 			if (termos[0].contains("-") && termos[1].contains("-")) {
 				termos[0] = subtracao(termos[0]);
 				termos[1] = subtracao(termos[1]);
-				
+
 				resultado += termos[0] + "=" + termos[1] + ";";
 			}
 
-			// Verifica se as duas partes da equação são divisíveis por um valor.
+			// Verifica se as duas partes da equação são divisíveis por um
+			// valor.
 			if (termos[0].contains("x")) {
 				String termoZero = termos[0].replaceAll("x", "");
 
@@ -72,80 +74,50 @@ public class Resolver {
 				resultado += termos[0] + "=" + termos[1] + ";";
 			}
 
-			//Realiza divisão dos dois termos.
-			if (termos[1].contains("/")) {
-				divisaoDoisTermos();
-			}
-			
-			
 			if (termos[0].contains("/") && termos[0].contains("x")) {
-				divisao();
+				termos[0] = divisao(termos[0]);
+
+				resultado += termos[0] + "=" + termos[1] + ";";
 			}
+			
+			if (termos[1].contains("/") && !termos[1].contains("3.0")) {
+				termos[1] = divisao(termos[1]);
+
+				resultado += termos[0] + "=" + termos[1];
+			}
+
 		}
+
 		return resultado;
 	}
 
 	/**
 	 * 
 	 */
-	private static void divisao() {
-		String[] parcelas = termos[0].split("/");
+	private static String divisao(String termo) {
+		String[] parcelas = termo.split("/");
 		double s = 0;
 
-		String termoZero = parcelas[0].replaceAll("x", "");
-
-		s = Double.parseDouble(termoZero)
-				/ Double.parseDouble(parcelas[1]);
+		String termoZero = parcelas[0];
+		if (termoZero.contains("x")) {
+			termoZero = parcelas[0].replaceAll("x", "");
+		}
+		
+		
+		if (Double.parseDouble(termoZero) % Double.parseDouble(parcelas[1]) == 0) {
+			s = Double.parseDouble(termoZero) / Double.parseDouble(parcelas[1]);
+		}
 
 		// Testando se o resultado é neutro, igual a 1.
 		if (s == 1.0) {
-			termos[0] = "x";
-		} else {
-			termos[0] = String.valueOf(s);
-		}
-
-		// Colocando o resultado na segunda parte da equação.
-		resultado += termos[0] + "=" + termos[1];
-	}
-
-	/**
-	 * 
-	 * 
-	 */
-	private static void divisaoDoisTermos() {
-		String[] parcelas = termos[1].split("/");
-		double s = 0;
-
-		if (Double.parseDouble(parcelas[0])
-				% Double.parseDouble(parcelas[1]) == 0) {
-			//Realiza a divisão da parcela [0] dividendo pela parcelas[1] divisor.
-			s = Double.parseDouble(parcelas[0])
-					/ Double.parseDouble(parcelas[1]);
-
-			// Colocando o resultado na segunda parte da equação.
-			termos[1] = String.valueOf(s);
-			resultado += termos[0] + "=" + s + ";";
-		}
-		//Divisão com x na parcela[].
-		if (termos[0].contains("/") && termos[0].contains("x")) {
-			parcelas = termos[0].split("/");
-			s = 0;
-
-			String termoZero = parcelas[0].replaceAll("x", "");
-
-			s = Double.parseDouble(termoZero)
-					/ Double.parseDouble(parcelas[1]);
-
-			// Testando se o resultado é neutro, igual a 1.
-			if (s == 1.0) {
-				termos[0] = "x";
-			} else {
-				termos[0] = String.valueOf(s);
+			if (termo.contains("x")) {
+				return "x";
 			}
-
-			// Colocando o resultado na segunda parte da equação.
-			resultado += termos[0] + "=" + termos[1];
+		} else {
+			return String.valueOf(s);
 		}
+
+		return String.valueOf(s);
 	}
 
 	/**
@@ -158,7 +130,7 @@ public class Resolver {
 			double s = Double.parseDouble(parcelasUm[1]);
 
 			s -= Double.parseDouble(parcelasDois[1]);
-			
+
 			if (s == 0.0) {
 				return parcelasDois[0];
 			} else {
@@ -166,19 +138,19 @@ public class Resolver {
 			}
 		} else {
 			String[] parcelas = termo.split("\\-");
-			
+
 			double s = 0;
-			
+
 			s = Double.parseDouble(parcelas[0]);
 
 			s -= Double.parseDouble(parcelas[1]);
-			
+
 			return String.valueOf(s);
-		}		
+		}
 	}
 
 	/**
-	 * return 
+	 * return
 	 */
 	private static String soma(String termo) {
 		String[] parcelas = termo.split("\\+");
