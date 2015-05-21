@@ -10,36 +10,32 @@ public class AlphaTest {
 
 	@Test
 	public void testResolverQuandoAEquacaoJaEARespostaFinalEDois() {
-		String res;
-		res = Alpha.resolver("x=2.0");
-		assertEquals("Resposta final", res);
+		assertEquals(Resolver.resolver("x=2.0"), "x=2.0");
 	}
 
 	@Test
 	public void testResolverQuandoAEquacaoJaEARespostaFinalESete() {
-		String res;
-		res = Alpha.resolver("x=7.0");
-		assertEquals("Resposta final", res);
+		assertEquals(Resolver.resolver("x=7.0"), "x=7.0");
 	}
 
 	@Test
 	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresIguais() {
 		String res;
-		res = Alpha.resolver("x=2+2");
+		res = Resolver.resolver("x=2+2");
 		assertEquals("x=4.0", res);
 	}
 	
 	@Test
 	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresDiferentes() {
 		String res;
-		res = Alpha.resolver("x=2+5");
+		res = Resolver.resolver("x=2+5");
 		assertEquals("x=7.0", res);
 	}
 	
 	@Test
 	public void testResolverQuandoAEquacaoPossuiMultiplicacaoNoPrimeiroTermo() {
 		String res;
-		res = Alpha.resolver("2x=2+2");
+		res = Resolver.resolver("2x=2+2");
 					//"2x/2.0=4.0/2.02x/2.0=2.0;x=2.0;"
 					//2x=4.0;2x/2=4.0/2;x=4.0/2;x=2.0
 		
@@ -49,7 +45,7 @@ public class AlphaTest {
 	@Test
 	public void testResolverQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermo() {
 		String res = null;
-		res = Alpha.resolver("3.0x+2.0=4.0");
+		res = Resolver.resolver("3.0x+2.0=4.0");
 		
 		assertEquals("3.0x+2.0-2.0=4.0-2.0;"
 					+ "3.0x=2.0;"
@@ -59,18 +55,14 @@ public class AlphaTest {
 	
 	@Test
 	public void testConfirmarDesenvolvimentoDaResoluçaoQuandoAEquacaoJaEAResolucao(){
-		String resultado;
-		resultado = Alpha.confirmar("x=3", "Resposta final");
-		assertEquals("Resposta correta",resultado);
-		
+		assertEquals(true, Alpha.confirmarDesenvolvimentoDaResolucao("x=3.0", "x=3.0"));
 	}
 	
 	@Test
 	public void confirmarDesenvolvimentoDaResolucao1(){
-		String resultado;
-		resultado = Alpha.confirmar("x=3+3", "x=6.0");
-		assertEquals("Resposta correta",resultado);
-		
+		//String resultado;
+		//resultado = Alpha.confirmarDesenvolvimentoDaResolucao("x=3+3", "x=6.0");
+		//assertEquals("Resposta correta",resultado);
 	}
 	
 	@Test
@@ -98,15 +90,15 @@ public class AlphaTest {
 	@Test
 	public void testVerificarPontuacaoQuandoAcertar() {
 		Alpha.resetPontuacao();
-		Alpha.confirmar("x=3", "Resposta final");
-	
+		Alpha.confirmarDesenvolvimentoDaResolucao("x=3.0", "x=3.0");
+		
 		assertEquals(1, Alpha.getPontuacao());
 	}	
 	
 	@Test
 	public void testVerificarPontuacaoQuandoErrar() {
 		Alpha.resetPontuacao();
-		Alpha.confirmar("x=3", "x=2");
+		Alpha.confirmarDesenvolvimentoDaResolucao("x=3", "x=2");
 	
 		assertEquals(0, Alpha.getPontuacao());
 	}	

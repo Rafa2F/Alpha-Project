@@ -98,7 +98,7 @@ public class TelaMostraResolucao {
 				txtpnResolucao.setText("");
 				Alpha alpha = new Alpha ();
 				
-				String resultado = alpha.resolver(textFieldEquacao.getText());
+				String resultado = Resolver.resolver(textFieldEquacao.getText());
 				String[] resultadoOrg = resultado.split(";");
 				for (int i = 0; i < resultadoOrg.length; i++) 
 				{
