@@ -61,11 +61,6 @@ public class AlphaTest {
 		assertEquals(true, Alpha.confirmarDesenvolvimentoDaResolucao("x=3.0", "x=3.0"));
 	}
 	
-	@Test
-	public void testVerificaPontuacaoInicial () {
-		Alpha.resetPontuacao();
-		assertEquals(0, Alpha.getPontuacao());
-	}	
 	
 	@Test
 	public void testConfirmarResultadoQuandoOValorEstiverCorreto() {
