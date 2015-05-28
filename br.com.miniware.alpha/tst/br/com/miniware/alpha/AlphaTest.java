@@ -62,13 +62,6 @@ public class AlphaTest {
 	}
 	
 	@Test
-	public void confirmarDesenvolvimentoDaResolucao1(){
-		//String resultado;
-		//resultado = Alpha.confirmarDesenvolvimentoDaResolucao("x=3+3", "x=6.0");
-		//assertEquals("Resposta correta",resultado);
-	}
-	
-	@Test
 	public void testVerificaPontuacaoInicial () {
 		Alpha.resetPontuacao();
 		assertEquals(0, Alpha.getPontuacao());
