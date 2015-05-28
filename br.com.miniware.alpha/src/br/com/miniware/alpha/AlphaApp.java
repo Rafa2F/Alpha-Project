@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 public class AlphaApp extends JFrame{
 
@@ -44,6 +45,15 @@ public class AlphaApp extends JFrame{
 		frmAlpha.setBounds(100, 100, 450, 300);
 		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAlpha.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("Passo a Passo");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaMostraResolucao.main(null);
+			}
+		});
+		btnNewButton.setBounds(10, 11, 138, 23);
+		frmAlpha.getContentPane().add(btnNewButton);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmAlpha.setJMenuBar(menuBar);
