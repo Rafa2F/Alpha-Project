@@ -10,55 +10,55 @@ public class AlphaTest {
 
 	@Test
 	public void testResolverQuandoAEquacaoJaEARespostaFinalEDois() {
-		assertEquals(Resolver.resolver("x=2.0"), "x=2.0");
+		assertEquals(Resolver.resolver("x=2"), "x=2");
 	}
 
 	@Test
 	public void testResolverQuandoAEquacaoJaEARespostaFinalESete() {
-		assertEquals(Resolver.resolver("x=7.0"), "x=7.0");
+		assertEquals(Resolver.resolver("x=7"), "x=7");
 	}
 
 	@Test
 	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresIguais() {
 		String res;
 		res = Resolver.resolver("x=2+2");
-		assertEquals("x=4.0", res);
+		assertEquals("x=4", res);
 	}
 	
 	@Test
 	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresDiferentes() {
 		String res;
 		res = Resolver.resolver("x=2+5");
-		assertEquals("x=7.0", res);
+		assertEquals("x=7", res);
 	}
 	
 	@Test
 	public void testResolverQuandoAEquacaoPossuiMultiplicacaoNoPrimeiroTermo() {
 		String res;
 		res = Resolver.resolver("2x=2+2");
-					//"2x/2.0=4.0/2.02x/2.0=2.0;x=2.0;"
-					//2x=4.0;2x/2=4.0/2;x=4.0/2;x=2.0
+					//"2x/2=4/22x/2=2;x=2;"
+					//2x=4;2x/2=4/2;x=4/2;x=2
 		
-		assertEquals("2x=4.0;"
-				+ "2x/2.0=4.0/2.0;"
-				+ "x=4.0/2.0;"
-				+ "x=2.0", res);
+		assertEquals("2x=4;"
+				+ "2x/2=4/2;"
+				+ "x=4/2;"
+				+ "x=2", res);
 	}
 	
 	@Test
 	public void testResolverQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermo() {
 		String res = null;
-		res = Resolver.resolver("3.0x+2.0=4.0");
+		res = Resolver.resolver("3x+2=4");
 		
-		assertEquals("3.0x+2.0-2.0=4.0-2.0;"
-					+ "3.0x=2.0;"
-					+ "3.0x/3.0=2.0/3.0;"
-					+ "x=2.0/3.0;", res);
+		assertEquals("3x+2-2=4-2;"
+					+ "3x=2;"
+					+ "3x/3=2/3;"
+					+ "x=2/3;", res);
 	}
 	
 	@Test
 	public void testConfirmarDesenvolvimentoDaResoluçaoQuandoAEquacaoJaEAResolucao(){
-		assertEquals(true, Alpha.confirmarDesenvolvimentoDaResolucao("x=3.0", "x=3.0"));
+		assertEquals(true, Alpha.confirmarDesenvolvimentoDaResolucao("x=3", "x=3"));
 	}
 	
 	
@@ -81,7 +81,7 @@ public class AlphaTest {
 	@Test
 	public void testVerificarPontuacaoQuandoAcertar() {
 		Alpha.resetPontuacao();
-		Alpha.confirmarDesenvolvimentoDaResolucao("x=3.0", "x=3.0");
+		Alpha.confirmarDesenvolvimentoDaResolucao("x=3", "x=3");
 		
 		assertEquals(1, Alpha.getPontuacao());
 	}	
