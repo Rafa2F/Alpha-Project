@@ -1,6 +1,5 @@
 package br.com.miniware.alpha;
 
-import java.util.Arrays;
 
 public class Resolver {
 
@@ -20,14 +19,14 @@ public class Resolver {
 
 				resultado = termos[0] + "=" + soma;
 
-				return resultado;
+				return resultado.replaceAll(".0", "");
 			} else {
 				// Retorna o valor da segunda parte da equação.
 				double v = Double.parseDouble(termos[1]);
 
 				resultado = termos[0] + "=" + v;
 
-				return resultado;
+				return resultado.replaceAll(".0", "");
 			}
 		} else {
 			// Verifica se a segunda parte contém uma soma.
@@ -88,7 +87,7 @@ public class Resolver {
 
 		}
 
-		return resultado;
+		return resultado.replaceAll(".0", "");
 	}
 
 	/**
