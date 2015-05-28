@@ -61,7 +61,6 @@ public class AlphaTest {
 		assertEquals(true, Alpha.confirmarDesenvolvimentoDaResolucao("x=3.0", "x=3.0"));
 	}
 	
-	
 	@Test
 	public void testConfirmarResultadoQuandoOValorEstiverCorreto() {
 		String expressao = "x=2";
