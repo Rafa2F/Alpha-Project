@@ -1,15 +1,21 @@
 package br.com.miniware.alpha;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Resolver {
 
 	private static String resultado = "";
 	private static String[] termos = null;
 	private static String expressao = null;
-
+	private static List<String> operacoes=new ArrayList<String>();
+	
 	public static String resolver(String expressao) {
 		// Separa a equação em dois termos caso for nulo.
 		termos = expressao.split("=");
+		
+		System.out.println(expressao);
 		
 		setExpressao(expressao);
 		
@@ -99,7 +105,9 @@ public class Resolver {
 	private static String divisao(String termo) {
 		String[] parcelas = termo.split("/");
 		double s = 0;
-
+		
+		String operacao="Divisão "+parcelas[0]+"/"+parcelas[1];
+		
 		String termoZero = parcelas[0];
 		if (termoZero.contains("x")) {
 			termoZero = parcelas[0].replaceAll("x", "");
@@ -112,10 +120,14 @@ public class Resolver {
 
 		// Testando se o resultado é neutro, igual a 1.
 		if (s == 1.0) {
+			operacao+=";"+1;
+			operacoes.add(operacao.replaceAll(".0",""));
 			if (termo.contains("x")) {
 				return "x";
 			}
 		} else {
+			operacao+=";"+s;
+			operacoes.add(operacao.replaceAll(".0",""));
 			return String.valueOf(s);
 		}
 
@@ -125,19 +137,33 @@ public class Resolver {
 	/**
 	 * 
 	 */
-	private static String subtracao(String termo) {
+	private static String subtracao(String termo) {	
 		if (termo.contains("x")) {
 			String[] parcelasUm = termo.split("\\-");
 			String[] parcelasDois = parcelasUm[0].split("\\+");
+			
+			String operacao="Subtração "+parcelasUm[0]+"-"+parcelasDois[1];
+			
 			double s = Double.parseDouble(parcelasUm[1]);
 
 			s -= Double.parseDouble(parcelasDois[1]);
 
 			if (s == 0.0) {
+				operacao+=";"+0;
+				
+				operacoes.add(operacao.replaceAll(".0",""));
+				
 				return parcelasDois[0];
 			} else {
+				operacao+=";"+s;
+				
+				operacoes.add(operacao.replaceAll(".0",""));
+				
 				return String.valueOf(s);
+				
 			}
+			
+			
 		} else {
 			String[] parcelas = termo.split("\\-");
 
@@ -156,10 +182,16 @@ public class Resolver {
 	 */
 	private static String soma(String termo) {
 		String[] parcelas = termo.split("\\+");
+		
+		String operacao="Soma "+ parcelas[0]+"+"+parcelas[1];
+		
 		double s = 0;
 		for (int i = 0; i < parcelas.length; i++) {
 			s += Double.parseDouble(parcelas[i]);
 		}
+		
+		operacao+=";"+s;
+		operacoes.add(operacao.replaceAll(".0",""));
 		return String.valueOf(s);
 	}
 
