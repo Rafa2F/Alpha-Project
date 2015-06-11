@@ -1,3 +1,4 @@
+package br.com.miniware.alpha;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -30,11 +31,11 @@ public class TelaRegras extends JFrame {
 		});
 	}
 
-	/**
+	/*
 	 * Create the frame.
 	 */
 	public TelaRegras() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -51,7 +52,7 @@ public class TelaRegras extends JFrame {
 		dtrpnSoma.setBackground(Color.WHITE);
 		dtrpnSoma.setFont(new Font("Tahoma", Font.BOLD, 11));
 		dtrpnSoma.setEnabled(false);
-		dtrpnSoma.setText("Polin\u00F4mios (com adi\u00E7\u00E3o):\r\nPasso 1: Encontra um n\u00FAmero comum entre as partes para simplificar a equa\u00E7\u00E3o atrav\u00E9s de subtra\u00E7\u00E3o;\r\nPasso 2: Realiza a opera\u00E7\u00E3o pendente no lado esquerdo da igualdade;\r\nPasso 3: Realiza a opera\u00E7\u00E3o pendente no lado direito da igualdade;\r\nPasso 4: Se for pass\u00EDvel de simplifica\u00E7\u00E3o encontra um n\u00FAmero comum novamente para simplificar o resultado por subtra\u00E7\u00E3o ou divis\u00E3o.\r\n");
+		dtrpnSoma.setText("Polin\u00F4mios (com adi\u00E7\u00E3o):\r\nPasso 1: Encontra um n\u00FAmero comum entre as partes para simplificar a equa\u00E7\u00E3o;\r\nPasso 2: Realiza a opera\u00E7\u00E3o pendente no lado esquerdo da igualdade;\r\nPasso 3: Realiza a opera\u00E7\u00E3o pendente no lado direito da igualdade;\r\nPasso 4: Se for pass\u00EDvel de simplifica\u00E7\u00E3o encontra um n\u00FAmero comum novamente para simplificar o resultado;\r\n");
 		dtrpnSoma.setBounds(10, 47, 414, 204);
 		contentPane.add(dtrpnSoma);
 	}
