@@ -12,8 +12,11 @@ public class Alpha {
 			pontuacao.adicionaPontuacao(1);
 			return true;
 		} else {
+			pontuacao.diminuePontuacao(1);
 			return false;
 		}
+		
+		
 	}
 
 	public static boolean confirmarResultado(String expressao, String resultado) {

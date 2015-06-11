@@ -23,6 +23,12 @@ public class Pontuacao {
 		
 	}
 	
+	public void diminuePontuacao(int i) 
+	{
+		this.pontuacao = pontuacao - i;
+		
+	}
+	
 	public void resetPontuacao () {
 		
 		pontuacao = 0;

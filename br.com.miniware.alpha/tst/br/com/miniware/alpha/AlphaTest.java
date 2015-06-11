@@ -90,7 +90,7 @@ public class AlphaTest {
 	public void testVerificarPontuacaoQuandoErrar() {
 		Alpha.resetPontuacao();
 		Alpha.confirmarDesenvolvimentoDaResolucao("x=3", "x=2");
-	
+		
 		assertEquals(0, Alpha.getPontuacao());
 	}	
 		
