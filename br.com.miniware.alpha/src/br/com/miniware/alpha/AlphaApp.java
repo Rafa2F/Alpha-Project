@@ -52,8 +52,17 @@ public class AlphaApp extends JFrame{
 				TelaMostraResolucao.main(null);
 			}
 		});
-		btnNewButton.setBounds(10, 11, 138, 23);
+		btnNewButton.setBounds(10, 61, 138, 23);
 		frmAlpha.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Regras");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaRegras.main(null);
+			}
+		});
+		btnNewButton_1.setBounds(10, 95, 138, 23);
+		frmAlpha.getContentPane().add(btnNewButton_1);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmAlpha.setJMenuBar(menuBar);
