@@ -5,11 +5,14 @@ public class Resolver {
 
 	private static String resultado = "";
 	private static String[] termos = null;
+	private static String expressao = null;
 
 	public static String resolver(String expressao) {
 		// Separa a equação em dois termos caso for nulo.
 		termos = expressao.split("=");
-
+		
+		setExpressao(expressao);
+		
 		// Verifica se na primeira parte da equação está um x isolado.
 		if (termos[0].equals("x")) {
 			// Verifica se a segunda parte contém uma soma.
@@ -158,6 +161,14 @@ public class Resolver {
 			s += Double.parseDouble(parcelas[i]);
 		}
 		return String.valueOf(s);
+	}
+
+	public static String getExpressao() {
+		return expressao;
+	}
+
+	public static void setExpressao(String expressao) {
+		Resolver.expressao = expressao;
 	}
 
 }

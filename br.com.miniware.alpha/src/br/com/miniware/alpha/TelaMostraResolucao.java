@@ -95,11 +95,11 @@ public class TelaMostraResolucao {
 		JButton btnNewButton = new JButton("Mostrar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txtpnResolucao.setText("");
-				Alpha alpha = new Alpha ();
-				
 				String resultado = Resolver.resolver(textFieldEquacao.getText());
 				String[] resultadoOrg = resultado.split(";");
+				
+				txtpnResolucao.setText(Resolver.getExpressao() + "\n");
+				
 				for (int i = 0; i < resultadoOrg.length; i++) 
 				{
 					txtpnResolucao.setText(txtpnResolucao.getText() + resultadoOrg[i] + "\n");
