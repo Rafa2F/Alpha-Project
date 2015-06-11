@@ -51,6 +51,7 @@ public class AlphaTest {
 		res = Resolver.resolver("3x+2=4");
 		
 		assertEquals("3x+2-2=4-2;"
+					+ "3x=4-2;"
 					+ "3x=2;"
 					+ "3x/3=2/3;"
 					+ "x=2/3;", res);

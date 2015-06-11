@@ -1,6 +1,7 @@
 package br.com.miniware.alpha;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -14,8 +15,6 @@ public class Resolver {
 	public static String resolver(String expressao) {
 		// Separa a equação em dois termos caso for nulo.
 		termos = expressao.split("=");
-		
-		System.out.println(expressao);
 		
 		setExpressao(expressao);
 		
@@ -64,6 +63,9 @@ public class Resolver {
 			// Realiza subtração nos dois termos
 			if (termos[0].contains("-") && termos[1].contains("-")) {
 				termos[0] = subtracao(termos[0]);
+				
+				resultado += termos[0] + "=" + termos[1] + ";";
+				
 				termos[1] = subtracao(termos[1]);
 
 				resultado += termos[0] + "=" + termos[1] + ";";
@@ -137,7 +139,7 @@ public class Resolver {
 	/**
 	 * 
 	 */
-	private static String subtracao(String termo) {	
+	private static String subtracao(String termo) {
 		if (termo.contains("x")) {
 			String[] parcelasUm = termo.split("\\-");
 			String[] parcelasDois = parcelasUm[0].split("\\+");
