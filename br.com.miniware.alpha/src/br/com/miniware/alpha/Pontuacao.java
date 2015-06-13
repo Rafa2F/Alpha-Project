@@ -15,8 +15,6 @@ public class Pontuacao {
 		return pontuacao;
 	}
 	
-	
-
 	public void adicionaPontuacao(int i) 
 	{
 		this.pontuacao = pontuacao + i;

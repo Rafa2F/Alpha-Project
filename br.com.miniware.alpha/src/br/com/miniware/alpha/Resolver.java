@@ -10,9 +10,15 @@ public class Resolver {
 	private static String resultado = "";
 	private static String[] termos = null;
 	private static String expressao = null;
-	private static List<String> operacoes=new ArrayList<String>();
+	private static List<String> operacoes = new ArrayList<String>();
 	
 	public static String resolver(String expressao) {
+		
+		//zerando os valores das variaveis
+		resultado = "";
+		termos = null;
+		
+		
 		// Separa a equação em dois termos caso for nulo.
 		termos = expressao.split("=");
 		
@@ -26,6 +32,7 @@ public class Resolver {
 				String soma = soma(termos[1]);
 
 				resultado = termos[0] + "=" + soma;
+				
 
 				return resultado.replaceAll(".0", "");
 			} else {
@@ -185,14 +192,14 @@ public class Resolver {
 	private static String soma(String termo) {
 		String[] parcelas = termo.split("\\+");
 		
-		String operacao="Soma "+ parcelas[0]+"+"+parcelas[1];
+		String operacao = "Soma " + parcelas[0] + "+" + parcelas[1];
 		
 		double s = 0;
 		for (int i = 0; i < parcelas.length; i++) {
 			s += Double.parseDouble(parcelas[i]);
 		}
 		
-		operacao+=";"+s;
+		operacao += ";" + s;
 		operacoes.add(operacao.replaceAll(".0",""));
 		return String.valueOf(s);
 	}
