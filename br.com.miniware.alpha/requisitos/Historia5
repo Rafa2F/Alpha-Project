@@ -6,4 +6,4 @@
 Cenário: Passo Em Que o Lado Direito Faz Uma Soma
 	Dado  a expressao x=2+2
 	Quando for feita a soma  
-	Então informar qua o  lado que contem o 2+2 foi somado.
+	Então informar o  motivo da lado que contem o 2+2 foi somado. -- porque o 2+2 é uma expressão entre constante sendo mais simples de resolver.

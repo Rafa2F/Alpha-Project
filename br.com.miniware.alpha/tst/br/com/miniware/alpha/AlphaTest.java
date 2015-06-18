@@ -14,6 +14,12 @@ public class AlphaTest {
 	}
 
 	@Test
+	public void testExplicarQuandoAEquacaoJaEARespostaFinalEDois() {
+		assertEquals(Resolver.resolver("x=2"), "x=2");
+		assertEquals(Resolver.explicar(), "[A expressão ja esta simplificada]");
+	}
+	
+	@Test
 	public void testResolverQuandoAEquacaoJaEARespostaFinalESete() {
 		assertEquals(Resolver.resolver("x=7"), "x=7");
 	}
@@ -24,6 +30,16 @@ public class AlphaTest {
 		res = Resolver.resolver("x=2+2");
 		//System.out.println("soma-se 2+2");
 		assertEquals("x=4", res);
+	}
+	
+	@Test
+	public void testExplicarQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresIguais() {
+		String res;
+		res = Resolver.resolver("x=2+2");
+		//System.out.println("soma-se 2+2");
+		assertEquals("x=4", res);
+		assertEquals(Resolver.explicar(), "[Passo 1, A expressão ja esta simplificada]");
+
 	}
 	
 	@Test
@@ -98,11 +114,7 @@ public class AlphaTest {
 		//assertEquals(0, Alpha.getPontuacao());
 	}	
 		
-	@Test
-	public void testPassoAPassoDaResolucao(){
-		
-		
-	}
+	
 	
 	
 }

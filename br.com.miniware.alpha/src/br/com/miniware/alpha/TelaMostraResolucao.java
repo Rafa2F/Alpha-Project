@@ -24,6 +24,7 @@ public class TelaMostraResolucao {
 	private JFrame frmEquaoPassoA;
 	private JTextField textFieldEquacao;
 	private JTextPane txtpnResolucao;
+	private JTextPane txtpnExplicacao;
 
 	/**
 	 * Launch the application.
@@ -55,7 +56,7 @@ public class TelaMostraResolucao {
 		frmEquaoPassoA = new JFrame();
 		frmEquaoPassoA.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaMostraResolucao.class.getResource("/br/com/miniware/alpha/alpha.jpg")));
 		frmEquaoPassoA.setTitle("Alpha - Equa\u00E7\u00E3o Passo a Passo");
-		frmEquaoPassoA.setBounds(100, 100, 450, 300);
+		frmEquaoPassoA.setBounds(230, 100, 780, 300);
 		frmEquaoPassoA.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -128,8 +129,19 @@ public class TelaMostraResolucao {
 		scrollPane.setBounds(55, 66, 338, 151);
 		frmEquaoPassoA.getContentPane().add(scrollPane);
 		
+		
 		txtpnResolucao = new JTextPane();
 		txtpnResolucao.setEditable(false);
 		scrollPane.setViewportView(txtpnResolucao);
+		
+		
+		
+		JScrollPane scrollPaneExplicacao = new JScrollPane();
+		scrollPaneExplicacao.setBounds(400, 66, 338, 151);
+		frmEquaoPassoA.getContentPane().add(scrollPaneExplicacao);
+		
+		txtpnExplicacao = new JTextPane();
+		txtpnExplicacao.setEditable(false);
+		scrollPaneExplicacao.setViewportView(txtpnExplicacao);
 	}
 }

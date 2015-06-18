@@ -13,7 +13,7 @@ public class Resolver {
 	private static List<String> operacoes = new ArrayList<String>();
 	
 	public static String resolver(String expressao) {
-		
+		operacoes = new ArrayList<String>();
 		//zerando os valores das variaveis
 		resultado = "";
 		termos = null;
@@ -41,7 +41,7 @@ public class Resolver {
 				double v = Double.parseDouble(termos[1]);
 
 				resultado = termos[0] + "=" + v;
-
+				operacoes.add("A expressão ja esta simplificada");
 				return resultado.replaceAll(".0", "");
 			}
 		} else {
@@ -106,7 +106,7 @@ public class Resolver {
 			}
 
 		}
-
+		
 		return resultado.replaceAll(".0", "");
 	}
 
@@ -133,13 +133,16 @@ public class Resolver {
 		if (s == 1.0) {
 			operacao+=";"+1;
 			operacoes.add(operacao.replaceAll(".0",""));
+			System.out.println(operacoes);
 			if (termo.contains("x")) {
 				return "x";
 			}
 		} else {
 			operacao+=";"+s;
 			operacoes.add(operacao.replaceAll(".0",""));
+			System.out.println(operacoes);
 			return String.valueOf(s);
+			
 		}
 
 		return String.valueOf(s);
@@ -163,13 +166,13 @@ public class Resolver {
 				operacao+=";"+0;
 				
 				operacoes.add(operacao.replaceAll(".0",""));
-				
+				System.out.println(operacoes);
 				return parcelasDois[0];
 			} else {
 				operacao+=";"+s;
 				
 				operacoes.add(operacao.replaceAll(".0",""));
-				
+				System.out.println(operacoes);
 				return String.valueOf(s);
 				
 			}
@@ -203,7 +206,8 @@ public class Resolver {
 		
 		operacao += ";" + s;
 		operacoes.add(operacao.replaceAll(".0",""));
-		System.out.println("Soma " + parcelas[0]+ "com "+ parcelas[1]);
+		System.out.println(operacoes);
+		//System.out.println("Soma " + parcelas[0]+ "com "+ parcelas[1]);
 		return String.valueOf(s);
 	}
 
@@ -213,6 +217,11 @@ public class Resolver {
 
 	public static void setExpressao(String expressao) {
 		Resolver.expressao = expressao;
+	}
+
+	public static String explicar() {
+	
+		return operacoes.toString();
 	}
 
 }
