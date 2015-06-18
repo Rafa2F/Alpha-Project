@@ -105,11 +105,7 @@ public class TelaMostraResolucao {
 					txtpnResolucao.setText(txtpnResolucao.getText() + resultadoOrg[i] + "\n");
 				}
 				
-				
-				
-				
-				
-				
+				resultado.split(";"); 
 			}
 		});
 		

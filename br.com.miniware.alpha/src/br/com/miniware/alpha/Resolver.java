@@ -1,6 +1,7 @@
 package br.com.miniware.alpha;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -9,9 +10,15 @@ public class Resolver {
 	private static String resultado = "";
 	private static String[] termos = null;
 	private static String expressao = null;
-	private static List<String> operacoes=new ArrayList<String>();
+	private static List<String> operacoes = new ArrayList<String>();
 	
 	public static String resolver(String expressao) {
+		
+		//zerando os valores das variaveis
+		resultado = "";
+		termos = null;
+		
+		
 		// Separa a equação em dois termos caso for nulo.
 		termos = expressao.split("=");
 		
@@ -23,8 +30,10 @@ public class Resolver {
 			if (termos[1].contains("+")) {
 				// Realiza a soma.
 				String soma = soma(termos[1]);
+				System.out.println();
 
 				resultado = termos[0] + "=" + soma;
+				
 
 				return resultado.replaceAll(".0", "");
 			} else {
@@ -63,6 +72,9 @@ public class Resolver {
 			// Realiza subtração nos dois termos
 			if (termos[0].contains("-") && termos[1].contains("-")) {
 				termos[0] = subtracao(termos[0]);
+				
+				resultado += termos[0] + "=" + termos[1] + ";";
+				
 				termos[1] = subtracao(termos[1]);
 
 				resultado += termos[0] + "=" + termos[1] + ";";
@@ -136,7 +148,7 @@ public class Resolver {
 	/**
 	 * 
 	 */
-	private static String subtracao(String termo) {	
+	private static String subtracao(String termo) {
 		if (termo.contains("x")) {
 			String[] parcelasUm = termo.split("\\-");
 			String[] parcelasDois = parcelasUm[0].split("\\+");
@@ -182,14 +194,14 @@ public class Resolver {
 	private static String soma(String termo) {
 		String[] parcelas = termo.split("\\+");
 		
-		String operacao="Soma "+ parcelas[0]+"+"+parcelas[1];
+		String operacao = "Soma " + parcelas[0] + "+" + parcelas[1];
 		
 		double s = 0;
 		for (int i = 0; i < parcelas.length; i++) {
 			s += Double.parseDouble(parcelas[i]);
 		}
 		
-		operacao+=";"+s;
+		operacao += ";" + s;
 		operacoes.add(operacao.replaceAll(".0",""));
 		System.out.println("Soma " + parcelas[0]+ "com "+ parcelas[1]);
 		return String.valueOf(s);
