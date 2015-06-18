@@ -15,8 +15,6 @@ public class Resolver {
 		// Separa a equação em dois termos caso for nulo.
 		termos = expressao.split("=");
 		
-		System.out.println(expressao);
-		
 		setExpressao(expressao);
 		
 		// Verifica se na primeira parte da equação está um x isolado.
@@ -40,6 +38,7 @@ public class Resolver {
 		} else {
 			// Verifica se a segunda parte contém uma soma.
 			if (termos[1].contains("+")) {
+				
 				// Realizar a soma.
 				String soma = soma(termos[1]);
 
@@ -192,6 +191,7 @@ public class Resolver {
 		
 		operacao+=";"+s;
 		operacoes.add(operacao.replaceAll(".0",""));
+		System.out.println("Soma " + parcelas[0]+ "com "+ parcelas[1]);
 		return String.valueOf(s);
 	}
 
