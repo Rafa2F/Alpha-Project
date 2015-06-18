@@ -22,6 +22,7 @@ public class AlphaTest {
 	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresIguais() {
 		String res;
 		res = Resolver.resolver("x=2+2");
+		//System.out.println("soma-se 2+2");
 		assertEquals("x=4", res);
 	}
 	
@@ -97,6 +98,11 @@ public class AlphaTest {
 		//assertEquals(0, Alpha.getPontuacao());
 	}	
 		
+	@Test
+	public void testPassoAPassoDaResolucao(){
 		
+		
+	}
+	
 	
 }

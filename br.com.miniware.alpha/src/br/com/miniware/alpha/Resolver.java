@@ -30,6 +30,7 @@ public class Resolver {
 			if (termos[1].contains("+")) {
 				// Realiza a soma.
 				String soma = soma(termos[1]);
+				System.out.println();
 
 				resultado = termos[0] + "=" + soma;
 				
