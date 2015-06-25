@@ -4,8 +4,8 @@
  com o intuito de ensinar passo-a-passo a resolução das equações, 
  com o diferencial de menor custo em relação aos concorrentes.
  
- # Equipe Atual
-
+# Equipe Atual
+ 
 * Rafael Fröhlich [Perfil](http://github.com/Rafa2F/).
 * Suelem Guimarães [Perfil](http://github.com/Suele/).
  
