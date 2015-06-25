@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import java.awt.Toolkit;
-
+import java.io.*;
 public class TelaMostraResolucao {
 
 	private JFrame frmEquaoPassoA;
@@ -104,6 +104,7 @@ public class TelaMostraResolucao {
 				for (int i = 0; i < resultadoOrg.length; i++) 
 				{
 					txtpnResolucao.setText(txtpnResolucao.getText() + resultadoOrg[i] + "\n");
+					txtpnExplicacao.setText(Resolver.explicar());
 				}
 				
 				resultado.split(";"); 

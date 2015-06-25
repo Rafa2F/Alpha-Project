@@ -10,10 +10,10 @@ public class Resolver {
 	private static String resultado = "";
 	private static String[] termos = null;
 	private static String expressao = null;
-	private static List<String> operacoes = new ArrayList<String>();
+	private static String operacoes = "";
 	
 	public static String resolver(String expressao) {
-		operacoes = new ArrayList<String>();
+		operacoes = "";
 		//zerando os valores das variaveis
 		resultado = "";
 		termos = null;
@@ -34,14 +34,14 @@ public class Resolver {
 
 				resultado = termos[0] + "=" + soma;
 				
-
+				operacoes = "Passo 3: esta fazendo a soma de 2 termos, porque o lado direito ja esta simplificado.";
 				return resultado.replaceAll(".0", "");
 			} else {
 				// Retorna o valor da segunda parte da equação.
 				double v = Double.parseDouble(termos[1]);
 
 				resultado = termos[0] + "=" + v;
-				operacoes.add("A expressão ja esta simplificada");
+				operacoes= "A expressão ja esta simplificada";
 				return resultado.replaceAll(".0", "");
 			}
 		} else {
@@ -50,9 +50,10 @@ public class Resolver {
 				
 				// Realizar a soma.
 				String soma = soma(termos[1]);
-
+				
 				// Colocando o resultado na segunda parte da equação.
 				termos[1] = soma;
+				operacoes = "Passo 3: Realiza a operação pendente do lado direito da igualdade";
 				resultado += termos[0] + "=" + soma + ";";
 			}
 
@@ -62,11 +63,12 @@ public class Resolver {
 				String termoZero[] = termos[0].split("\\+");
 
 				double valor = Double.parseDouble(termoZero[1]);
-
+					
 				termos[0] += "-" + valor;
 				termos[1] += "-" + valor;
-
+				operacoes = "Passo 1- Encontra um  numero comum entre as partes para simplificar";
 				resultado = termos[0] + "=" + termos[1] + ";";
+				
 			}
 
 			// Realiza subtração nos dois termos
@@ -132,14 +134,14 @@ public class Resolver {
 		// Testando se o resultado é neutro, igual a 1.
 		if (s == 1.0) {
 			operacao+=";"+1;
-			operacoes.add(operacao.replaceAll(".0",""));
+			
 			System.out.println(operacoes);
 			if (termo.contains("x")) {
 				return "x";
 			}
 		} else {
 			operacao+=";"+s;
-			operacoes.add(operacao.replaceAll(".0",""));
+			
 			System.out.println(operacoes);
 			return String.valueOf(s);
 			
@@ -165,14 +167,13 @@ public class Resolver {
 			if (s == 0.0) {
 				operacao+=";"+0;
 				
-				operacoes.add(operacao.replaceAll(".0",""));
+				
 				System.out.println(operacoes);
 				return parcelasDois[0];
 			} else {
 				operacao+=";"+s;
 				
-				operacoes.add(operacao.replaceAll(".0",""));
-				System.out.println(operacoes);
+				
 				return String.valueOf(s);
 				
 			}
@@ -205,9 +206,7 @@ public class Resolver {
 		}
 		
 		operacao += ";" + s;
-		operacoes.add(operacao.replaceAll(".0",""));
-		System.out.println(operacoes);
-		//System.out.println("Soma " + parcelas[0]+ "com "+ parcelas[1]);
+	
 		return String.valueOf(s);
 	}
 

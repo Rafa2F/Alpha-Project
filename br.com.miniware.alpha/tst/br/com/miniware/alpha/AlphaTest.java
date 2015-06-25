@@ -16,7 +16,7 @@ public class AlphaTest {
 	@Test
 	public void testExplicarQuandoAEquacaoJaEARespostaFinalEDois() {
 		assertEquals(Resolver.resolver("x=2"), "x=2");
-		assertEquals(Resolver.explicar(), "[A expressão ja esta simplificada]");
+		assertEquals(Resolver.explicar(), "A expressão ja esta simplificada");
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class AlphaTest {
 		res = Resolver.resolver("x=2+2");
 		//System.out.println("soma-se 2+2");
 		assertEquals("x=4", res);
-		assertEquals(Resolver.explicar(), "[Passo 1, A expressão ja esta simplificada]");
+		assertEquals(Resolver.explicar(), "Passo 3: esta fazendo a soma de 2 termos, porque o lado direito ja esta simplificado.");
 
 	}
 	
