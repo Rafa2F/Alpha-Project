@@ -69,7 +69,7 @@ public class TelaSobre extends JFrame {
 		JLabel lblAutoresRafaelFerreira = new JLabel("Autores: Rafael Ferreira, Suelen Gon\u00E7alves, Diego Kremer, Dantieres\r\n");
 		lblAutoresRafaelFerreira.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAutoresRafaelFerreira.setFont(new Font("Tahoma", Font.BOLD, 9));
-		lblAutoresRafaelFerreira.setBounds(56, 44, 339, 14);
+		lblAutoresRafaelFerreira.setBounds(38, 48, 368, 28);
 		A.add(lblAutoresRafaelFerreira);
 		
 		JLabel lblCopyrightMiniware = new JLabel("Copyright MiniWare 2015 Todos os direitos reservados.");
