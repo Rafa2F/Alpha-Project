@@ -38,7 +38,7 @@ public class AlphaTest {
 		res = Resolver.resolver("x=2+2");
 		//System.out.println("soma-se 2+2");
 		assertEquals("x=4", res);
-		assertEquals(Resolver.explicar(), "Passo 3: esta fazendo a soma de 2 termos, porque o lado direito ja esta simplificado.");
+		assertEquals(Resolver.explicar(), "Passo 2: esta fazendo a soma de 2 termos, porque o lado esquerdo  ja esta simplificado.");
 
 	}
 	

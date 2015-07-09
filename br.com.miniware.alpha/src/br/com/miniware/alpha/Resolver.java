@@ -34,7 +34,7 @@ public class Resolver {
 
 				resultado = termos[0] + "=" + soma;
 				
-				operacoes = "Passo 3: esta fazendo a soma de 2 termos, porque o lado direito ja esta simplificado.";
+				operacoes = "Passo 2: esta fazendo a soma de 2 termos, porque o lado esquerdo  ja esta simplificado.";
 				return resultado.replaceAll(".0", "");
 			} else {
 				// Retorna o valor da segunda parte da equação.
@@ -53,8 +53,9 @@ public class Resolver {
 				
 				// Colocando o resultado na segunda parte da equação.
 				termos[1] = soma;
-				operacoes = "Passo 3: Realiza a operação pendente do lado direito da igualdade";
+				
 				resultado += termos[0] + "=" + soma + ";";
+				operacoes = "Passo 3: Realiza a operação de soma do lado direito";
 			}
 
 			// Verifica se as duas partes podem ser subtraídas por um numero
