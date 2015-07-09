@@ -34,7 +34,7 @@ public class Resolver {
 
 				resultado = termos[0] + "=" + soma;
 				
-				operacoes = "Passo 2: esta fazendo a soma de 2 termos, porque o lado esquerdo  ja esta simplificado.";
+				operacoes = "Regra 2: esta fazendo a soma de 2 termos, porque o lado esquerdo  ja esta simplificado.";
 				return resultado.replaceAll(".0", "");
 			} else {
 				// Retorna o valor da segunda parte da equação.
@@ -55,7 +55,7 @@ public class Resolver {
 				termos[1] = soma;
 				
 				resultado += termos[0] + "=" + soma + ";";
-				operacoes = "Passo 3: Realiza a operação de soma do lado direito";
+				operacoes = "Regra 3: Realiza a operação de soma do lado direito";
 			}
 
 			// Verifica se as duas partes podem ser subtraídas por um numero
@@ -67,7 +67,7 @@ public class Resolver {
 					
 				termos[0] += "-" + valor;
 				termos[1] += "-" + valor;
-				operacoes = "Passo 1- Encontra um  numero comum entre as partes para simplificar";
+				operacoes = "Regra 1- Encontra um  numero comum entre as partes para simplificar";
 				resultado = termos[0] + "=" + termos[1] + ";";
 				
 			}

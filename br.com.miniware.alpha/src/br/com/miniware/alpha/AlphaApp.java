@@ -87,7 +87,7 @@ public class AlphaApp extends JFrame{
 		
 		dtrpnSoma.setFont(new Font("Tahoma", Font.BOLD, 11));
 		dtrpnSoma.setEnabled(true);
-		dtrpnSoma.setText("Polin\u00F4mios (com adi\u00E7\u00E3o):\r\nPasso 1: Encontra um n\u00FAmero comum entre as partes para simplificar a equa\u00E7\u00E3o;\r\nPasso 2: Realiza a opera\u00E7\u00E3o pendente no lado esquerdo da igualdade;\r\nPasso 3: Realiza a opera\u00E7\u00E3o pendente no lado direito da igualdade;\r\nPasso 4: Se for pass\u00EDvel de simplifica\u00E7\u00E3o encontra um n\u00FAmero comum novamente para simplificar o resultado;\r\n");
+		dtrpnSoma.setText("Polin\u00F4mios (com adi\u00E7\u00E3o):\r\nRegra 1: Encontra um n\u00FAmero comum entre as partes para simplificar a equa\u00E7\u00E3o;\r\nRegra 2: Realiza a opera\u00E7\u00E3o pendente no lado esquerdo da igualdade;\r\nRegra 3: Realiza a opera\u00E7\u00E3o pendente no lado direito da igualdade;\r\nRegra 4: Se for pass\u00EDvel de simplifica\u00E7\u00E3o encontra um n\u00FAmero comum novamente para simplificar o resultado;\r\n");
 		dtrpnSoma.setBounds(30, 150, 414, 104);
 		frmAlpha.add(dtrpnSoma);
 		
