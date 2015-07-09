@@ -47,7 +47,7 @@ public class AlphaTest {
 		assertEquals("2x/2=4/2;"
 				+ "x=4/2;"
 				+ "x=2", res);
-		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação.;Regra 4: Se for passível de simplificação encontra um número comum novamente para simplificar o resultado;A expressão já está simplificada.", Resolver.explicar());
+		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação.;Regra 2: Realiza a operação pendente no lado esquerdo da igualdade.;Regra 3: Realiza a operação pendente no lado direito da igualdade;A expressão já está simplificada.", Resolver.explicar());
 
 	}
 	

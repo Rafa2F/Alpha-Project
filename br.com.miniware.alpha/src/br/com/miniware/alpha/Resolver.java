@@ -30,18 +30,18 @@ public class Resolver {
 			if (termos[1].contains("+")) {
 				// Realiza a soma.
 				String soma = soma(termos[1]);
-				System.out.println();
+				//System.out.println();
 
 				resultado = termos[0] + "=" + soma;
 				
-				operacoes = "Regra 2: esta fazendo a soma de 2 termos, porque o lado esquerdo  ja esta simplificado.";
+				operacoes = "Regra 2: Realiza a operação pendente no lado esquerdo da igualdade.";
 				return resultado.replaceAll(".0", "");
 			} else {
 				// Retorna o valor da segunda parte da equação.
 				double v = Double.parseDouble(termos[1]);
 
 				resultado = termos[0] + "=" + v;
-				operacoes= "A expressão ja esta simplificada";
+				operacoes= "A expressão já está simplificada.";
 				return resultado.replaceAll(".0", "");
 			}
 		} else {
@@ -92,18 +92,19 @@ public class Resolver {
 
 				termos[0] += "/" + valor;
 				termos[1] += "/" + valor;
-
+				operacoes = "Regra 1: Encontra um número comum entre as partes para simplificar a equação.";
 				resultado += termos[0] + "=" + termos[1] + ";";
 			}
 
 			if (termos[0].contains("/") && termos[0].contains("x")) {
 				termos[0] = divisao(termos[0]);
-
+				operacoes += ";Regra 2: Realiza a operação pendente no lado esquerdo da igualdade.";
 				resultado += termos[0] + "=" + termos[1] + ";";
 			}
 			
 			if (termos[1].contains("/") && !termos[1].contains("3.0")) {
 				termos[1] = divisao(termos[1]);
+				operacoes += ";Regra 3: Realiza a operação pendente no lado direito da igualdade.";
 
 				resultado += termos[0] + "=" + termos[1];
 			}
@@ -136,14 +137,14 @@ public class Resolver {
 		if (s == 1.0) {
 			operacao+=";"+1;
 			
-			System.out.println(operacoes);
+			//System.out.println(operacoes);
 			if (termo.contains("x")) {
 				return "x";
 			}
 		} else {
 			operacao+=";"+s;
 			
-			System.out.println(operacoes);
+			//System.out.println(operacoes);
 			return String.valueOf(s);
 			
 		}
@@ -169,7 +170,7 @@ public class Resolver {
 				operacao+=";"+0;
 				
 				
-				System.out.println(operacoes);
+				//System.out.println(operacoes);
 				return parcelasDois[0];
 			} else {
 				operacao+=";"+s;
