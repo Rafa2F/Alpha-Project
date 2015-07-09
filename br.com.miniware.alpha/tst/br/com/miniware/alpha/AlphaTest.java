@@ -31,6 +31,28 @@ public class AlphaTest {
 	}
 	
 	@Test
+	public void testResolverQuandoAEquacaoPossuiForDoisXIgualAQuatro() {
+		String res;
+		res = Resolver.resolver("2x=4");
+		assertEquals("2x/2=4/2;"
+				+ "x=4/2;"
+				+ "x=2", res);
+		
+	}
+	
+	@Test
+	public void testExplicarQuandoAEquacaoPossuiForDoisXIgualAQuatro() {
+		String res;
+		res = Resolver.resolver("2x=4");
+		assertEquals("2x/2=4/2;"
+				+ "x=4/2;"
+				+ "x=2", res);
+		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação.", Resolver.explicar());
+
+	}
+	
+	
+	@Test
 	public void testResolverQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresIguais() {
 		String res;
 		res = Resolver.resolver("x=2+2");	
