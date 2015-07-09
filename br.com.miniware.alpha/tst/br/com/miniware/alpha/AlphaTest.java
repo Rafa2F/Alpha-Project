@@ -139,6 +139,33 @@ public class AlphaTest {
 
 	}
 	
+	@Test
+	public void testResolverQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermoDois() {
+		String res = null;
+		res = Resolver.resolver("5x+4=5+2");
+		
+		assertEquals("5x+4-4=7-4;"
+					+ "5x=7-4;"					
+					+ "5x=3;"
+					+ "5x/5=3/5;"
+					+ "x=3/5;", res);
+	}
+	
+	
+	@Test
+	public void testExplicarQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermoDois() {
+		String res = null;
+		res = Resolver.resolver("5x+4=5+2");
+		
+		assertEquals("5x+4-4=7-4;"
+					+ "5x=7-4;"					
+					+ "5x=3;"
+					+ "5x/5=3/5;"
+					+ "x=3/5;", res);
+		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação;Regra 3: Realiza a operação pendente no lado direito da igualdade.;Regra 3: Realiza a operação pendente no lado direito da igualdade;Regra 1: Encontra um número comum entre as partes para simplificar a equação;Regra 3: Realiza a operação pendente no lado direito da igualdade;A expressão já está simplificada.", Resolver.explicar());
+
+	}
+	
 	
 	@Test
 	public void testConfirmarDesenvolvimentoDaResoluçaoQuandoAEquacaoJaEAResolucao(){
