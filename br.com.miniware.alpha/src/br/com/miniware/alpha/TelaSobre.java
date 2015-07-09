@@ -84,9 +84,8 @@ public class TelaSobre extends JFrame {
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
-					setDefaultCloseOperation(EXIT_ON_CLOSE);
-					System.exit(0);
-					
+					setVisible(false);
+	
 				
 			
 			}
