@@ -47,7 +47,7 @@ public class AlphaTest {
 		assertEquals("2x/2=4/2;"
 				+ "x=4/2;"
 				+ "x=2", res);
-		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação.", Resolver.explicar());
+		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação.;Regra 4: Se for passível de simplificação encontra um número comum novamente para simplificar o resultado;A expressão já está simplificada.", Resolver.explicar());
 
 	}
 	
@@ -64,7 +64,7 @@ public class AlphaTest {
 		String res;
 		res = Resolver.resolver("x=2+2");
 		assertEquals("x=4", res);
-		assertEquals(Resolver.explicar(), "Regra 2: está fazendo a soma de 2 termos, porque o lado esquerdo já está simplificado.");
+		assertEquals("Regra 3: Realiza a operação pendente no lado direito da igualdade.;A expressão já está simplificada.", Resolver.explicar() );
 
 	}
 	
@@ -74,6 +74,17 @@ public class AlphaTest {
 		res = Resolver.resolver("x=2+5");
 		assertEquals("x=7", res);
 	}
+	
+	
+	@Test
+	public void testExplicarQuandoAEquacaoPossuiSomaNoSegundoTermoComValoresDiferentes() {
+		String res;
+		res = Resolver.resolver("x=2+5");
+		assertEquals("x=7", res);
+		assertEquals( "Regra 3: Realiza a operação pendente no lado direito da igualdade.;A expressão já está simplificada.", Resolver.explicar());
+	}
+	
+	
 	
 	@Test
 	public void testResolverQuandoAEquacaoPossuiMultiplicacaoNoPrimeiroTermo() {
@@ -89,6 +100,18 @@ public class AlphaTest {
 	}
 	
 	@Test
+	public void testExplicarQuandoAEquacaoPossuiMultiplicacaoNoPrimeiroTermo() {
+		String res;
+		res = Resolver.resolver("2x=2+2");
+
+		assertEquals("2x=4;"
+				+ "2x/2=4/2;"
+				+ "x=4/2;"
+				+ "x=2", res);
+		assertEquals( "Regra 3: Realiza a operação pendente no lado direito da igualdade.;Regra 1: Encontra um número comum entre as partes para simplificar a equação;Regra 3: Realiza a operação pendente no lado direito da igualdade;A expressão já está simplificada.", Resolver.explicar());
+	}
+	
+	@Test
 	public void testResolverQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermo() {
 		String res = null;
 		res = Resolver.resolver("3x+2=4");
@@ -99,6 +122,23 @@ public class AlphaTest {
 					+ "3x/3=2/3;"
 					+ "x=2/3;", res);
 	}
+	
+	
+	@Test
+	public void testExplicarQuandoAEquacaoPossuiMultiplicacaoESomaNoPrimeiroTermo() {
+		String res = null;
+		res = Resolver.resolver("3x+2=4");
+		
+		assertEquals("3x+2-2=4-2;"
+					+ "3x=4-2;"
+					+ "3x=2;"
+					+ "3x/3=2/3;"
+					+ "x=2/3;", res);
+		
+		assertEquals( "Regra 1: Encontra um número comum entre as partes para simplificar a equação;Regra 3: Realiza a operação pendente no lado direito da igualdade.;Regra 1: Encontra um número comum entre as partes para simplificar a equação;Regra 3: Realiza a operação pendente no lado direito da igualdade;A expressão já está simplificada.", Resolver.explicar());
+
+	}
+	
 	
 	@Test
 	public void testConfirmarDesenvolvimentoDaResoluçaoQuandoAEquacaoJaEAResolucao(){
