@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 
-import br.com.miniware.alpha.AlphaApp.SwingAction;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;

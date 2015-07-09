@@ -1,7 +1,9 @@
 package br.com.miniware.alpha;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -17,6 +19,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+
 import java.awt.Toolkit;
 import java.io.*;
 public class TelaMostraResolucao {
@@ -56,7 +59,7 @@ public class TelaMostraResolucao {
 		frmEquaoPassoA = new JFrame();
 		frmEquaoPassoA.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaMostraResolucao.class.getResource("/br/com/miniware/alpha/alpha.jpg")));
 		frmEquaoPassoA.setTitle("Alpha - Equa\u00E7\u00E3o Passo a Passo");
-		frmEquaoPassoA.setBounds(230, 100, 780, 300);
+		frmEquaoPassoA.setBounds(230, 100, 780, 500);
 		frmEquaoPassoA.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -144,5 +147,14 @@ public class TelaMostraResolucao {
 		txtpnExplicacao = new JTextPane();
 		txtpnExplicacao.setEditable(false);
 		scrollPaneExplicacao.setViewportView(txtpnExplicacao);
+		
+		JEditorPane dtrpnSoma = new JEditorPane();
+		dtrpnSoma.setForeground(Color.BLACK);
+		
+		dtrpnSoma.setFont(new Font("Tahoma", Font.BOLD, 11));
+		dtrpnSoma.setEnabled(true);
+		dtrpnSoma.setText("Polin\u00F4mios (com adi\u00E7\u00E3o):\r\nRegra 1: Encontra um n\u00FAmero comum entre as partes para simplificar a equa\u00E7\u00E3o;\r\nRegra 2: Realiza a opera\u00E7\u00E3o pendente no lado esquerdo da igualdade;\r\nRegra 3: Realiza a opera\u00E7\u00E3o pendente no lado direito da igualdade;\r\nRegra 4: Se for pass\u00EDvel de simplifica\u00E7\u00E3o encontra um n\u00FAmero comum novamente para simplificar o resultado;\r\n");
+		dtrpnSoma.setBounds(170, 250, 414, 104);
+		frmEquaoPassoA.getContentPane().add(dtrpnSoma);
 	}
 }
