@@ -7,7 +7,6 @@
 # Equipe Atual
  
 * Rafael Fröhlich [Perfil](http://github.com/Rafa2F/).
-* Suelem Guimarães [Perfil](http://github.com/Suele/).
  
 # Integrantes
 
